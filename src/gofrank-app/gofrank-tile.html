@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="gofrank-tile">
+  <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      div img {
+        transform-origin: 50% 50%;
+        transform: scale(1.1);
+      }
+
+      div h6 {
+        margin: 18px 0 0 0;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgba(0,0,0,0.48);
+        text-transform: capitalize;
+      }
+    </style>
+
+    <div>
+      <img src="src/gofrank-app/assets/[[icon]].svg" alt="[[icon]]">
+      <h6>[[icon]]</h6>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankTile extends Polymer.Element {
+      static get is() { return 'gofrank-tile'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankTile.is, GofrankTile);
+  </script>
+</dom-module>

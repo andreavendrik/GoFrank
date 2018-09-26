@@ -1,0 +1,135 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="gofrank-home.html">
+<link rel="import" href="gofrank-list.html">
+<link rel="import" href="gofrank-brand-page.html">
+
+<dom-module id="gofrank-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 27px 18px;
+        box-sizing: border-box;
+        font-family: 'HK Grotesk';
+        font-kerning: normal;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        box-sizing: border-box;
+      }
+
+      #logo {
+        height: 48px;
+        flex: 1;
+        transition: 0.5s opacity;
+      }
+
+      :host(:not([page="home"])) #logo {
+        opacity: 0;
+      }
+
+      #menu {
+        flex: none;
+        height: 20px;
+      }
+
+      .page {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+      }
+
+      gofrank-home {
+        transition: 0.5s opacity;
+      }
+
+      :host(:not([page="home"])) gofrank-home {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      gofrank-list {
+        top: 18px;
+        pointer-events: none;
+        opacity: 0;
+        transition: 2s opacity;
+      }
+
+      :host([page="list"]) gofrank-list {
+        opacity: 1;
+        transition-delay: 0.6s;
+        pointer-events: all;
+      }
+
+      #brand-page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        clip-path: circle(0px at center);
+        -webkit-clip-path: circle(0px at center);
+        transition: 1s clip-path ease;
+        z-index: 2;
+      }
+
+      :host([page="detail"]) #brand-page {
+        clip-path: circle(100vh at center);
+        -webkit-clip-path: circle(100vh at center);
+      }
+    </style>
+
+    <header>
+      <img id="logo" src="src/gofrank-app/logo.svg" alt="logo">
+      <img id="menu" src="src/gofrank-app/menu.svg" alt="menu">
+    </header>
+
+    <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
+    <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list>
+    <gofrank-brand-page id="brand-page" class="page"></gofrank-brand-page>
+    
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankApp extends Polymer.Element {
+      static get is() { return 'gofrank-app'; }
+      static get properties() {
+        return {
+          page: {
+            type: String,
+            value: 'home',
+            reflectToAttribute: true,
+          },
+
+          category: {
+            type: String,
+            value: ''
+          }
+
+        };
+      }
+
+      _showList(evt) {
+        this.category = evt.detail.icon;
+        this.page = 'list';
+      }
+
+      _showDetailPage(evt) {
+        this.page = 'detail';
+      }
+
+    }
+
+    window.customElements.define(GofrankApp.is, GofrankApp);
+  </script>
+</dom-module>

@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="gofrank-brand-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background: #27e1fd;
+      }
+    </style>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankBrandPage extends Polymer.Element {
+      static get is() { return 'gofrank-brand-page'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankBrandPage.is, GofrankBrandPage);
+  </script>
+</dom-module>

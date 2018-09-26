@@ -1,0 +1,191 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="gofrank-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+        padding: 18px 0;
+      }
+
+      header {
+        padding: 0;
+        box-sizing: border-box;
+        margin-bottom: 18px;
+      }
+
+      header h1 {
+        margin: 18px 0 0 0;
+        font-weight: normal;
+        line-height: 1.2;
+        font-size: 16px;
+      }
+
+      header h1 strong {
+        text-transform: capitalize;
+      }
+
+      header #icon {
+        transform-origin: 50% 50%;
+        transform: scale(1.5);
+        opacity: 0;
+      }
+
+      #list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #list li {
+        padding: 9px 0;
+        height: 77px;
+        display: flex;
+        transition: 1s all;
+        opacity: 0;
+        transform: translateY(32px);
+      }
+
+      #list li.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #list li:not(:last-child) {
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      #list li img {
+        flex: 0;
+        min-width: 91px;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #list li .textbox {
+        flex: 1;
+        text-align: left;
+        padding: 6px 18px;
+        box-sizing: border-box;
+      }
+
+      #list li .textbox h2 {
+        margin: 0 0 6px 0;
+        font-family: Lydian;
+        font-size: 27px;
+      }
+    </style>
+
+    <header>
+      <img id="icon" src="src/gofrank-app/assets/[[category]].svg" alt="icon">
+      <h1>These brands sell <strong>[[gender]] [[category]]</strong></h1>
+    </header>
+
+    <ul id="list">
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/matt.png" alt="img">
+        <div class="textbox">
+          <h2>Matt & Natt</h2>
+          <article>Vegan Bags</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/afriek.png" alt="img">
+        <div class="textbox">
+          <h2>Afriek</h2>
+          <article>Made in Rwanda</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/goatorganic.png" alt="img">
+        <div class="textbox">
+          <h2>Goat organic</h2>
+          <article>Perfect behh-sics</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/peopletree.png" alt="img">
+        <div class="textbox">
+          <h2>People Tree</h2>
+          <article>Vegan Bags</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/matt.png" alt="img">
+        <div class="textbox">
+          <h2>Matt & Natt</h2>
+          <article>Vegan Bags</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/afriek.png" alt="img">
+        <div class="textbox">
+          <h2>Afriek</h2>
+          <article>Made in Rwanda</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/goatorganic.png" alt="img">
+        <div class="textbox">
+          <h2>Goat organic</h2>
+          <article>Perfect behh-sics</article>
+        </div>
+      </li>
+      <li on-click="_handleItemClick">
+        <img src="src/gofrank-app/images/peopletree.png" alt="img">
+        <div class="textbox">
+          <h2>People Tree</h2>
+          <article>Vegan Bags</article>
+        </div>
+      </li>
+    </ul>
+    
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankList extends Polymer.Element {
+      static get is() { return 'gofrank-list'; }
+      static get properties() {
+        return {
+          gender: {
+            type: '',
+          },
+          category: {
+            type: String,
+            value: '',
+            observer: '_categoryChanged'
+          }
+        };
+      }
+
+      _categoryChanged(newCat, oldCat) {
+        window.setTimeout(() => {
+          if(newCat && !oldCat) {
+            var items = Array.from(this.shadowRoot.querySelectorAll('li'));
+            for(var i in items) {
+              this._enableTile(items[i], (i+1)*20)
+            }
+          }
+        }, 1000)
+      }
+
+      _enableTile(item, timeOutMs) {
+        window.setTimeout(() => {
+          item.classList.add('active');
+        }, timeOutMs);
+      }
+
+      _handleItemClick() {
+        this.dispatchEvent(new CustomEvent('item-clicked'));
+      }
+
+    }
+
+    window.customElements.define(GofrankList.is, GofrankList);
+  </script>
+</dom-module>
