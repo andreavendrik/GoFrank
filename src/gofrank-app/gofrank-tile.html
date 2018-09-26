@@ -13,20 +13,42 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 80px;
+        height: 100px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        div {
+          height: 160px;
+        }
       }
 
       div img {
         transform-origin: 50% 50%;
         transform: scale(1.1);
+        max-height: 40px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        div img {
+          max-height: 70px
+        }
       }
 
       div h6 {
         margin: 18px 0 0 0;
-        font-size: 13px;
         font-weight: 400;
         color: rgba(0,0,0,0.48);
         text-transform: capitalize;
+        @apply --ui-font-mobile;
       }
+
+      @media only screen and (min-width: 1280px) {
+        div h6 {
+          max-height: 75px;
+          @apply --ui-font-desktop;
+        }
+      }      
     </style>
 
     <div>

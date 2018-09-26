@@ -8,34 +8,75 @@
     <style>
       :host {
         display: block;
-        padding: 27px 18px;
         box-sizing: border-box;
         font-family: 'HK Grotesk';
         font-kerning: normal;
         -webkit-font-smoothing: antialiased;
+        margin:0px;
+        padding: 0px;
       }
 
       header {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
+        justify-content: space-between;
         box-sizing: border-box;
+        padding: 10px 20px;
+        height: 60px;
+        position: relative;
+        z-index:2;
+        max-width: 1200px;
+        margin: auto;
       }
 
       #logo {
-        height: 48px;
         flex: 1;
         transition: 0.5s opacity;
+        text-align: center;
+      }
+
+      #logo img {
+        height: 45px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #logo {
+          text-align: left;
+        }
+      }  
+
+      #menu img {
+        flex: none;
+        height: 20px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #menu {
+          display:none;
+        }
+      }     
+
+      nav {
+        flex: 1;
+        text-align: right;
+        display: none;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        nav {
+          display:block;
+        }
+      }           
+
+      nav a {
+        @apply --ui-font-desktop;
+        color: black;
+        margin-right: 20px;
+        text-decoration: none;
       }
 
       :host(:not([page="home"])) #logo {
         opacity: 0;
-      }
-
-      #menu {
-        flex: none;
-        height: 20px;
       }
 
       .page {
@@ -86,9 +127,20 @@
     </style>
 
     <header>
-      <img id="logo" src="src/gofrank-app/logo.svg" alt="logo">
-      <img id="menu" src="src/gofrank-app/menu.svg" alt="menu">
+      <div id="logo">
+        <img src="src/gofrank-app/logo.svg" alt="logo">
+      </div>
+      <div id="menu">
+        <img src="src/gofrank-app/menu.svg" alt="menu">
+      </div>
+      <nav>
+        <a href="/brands/">All brands</a> 
+        <a href="/shops/">Where to buy</a> 
+        <a href="/about/">About</a> 
+        <a href="/blog/">Blog</a> 
+      </nav>
     </header>
+
 
     <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
     <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list>

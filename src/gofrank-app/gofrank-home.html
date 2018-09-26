@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="shared-styles.html">
 <link rel="import" href="gofrank-tile.html">
 
 <dom-module id="gofrank-home">
@@ -10,23 +11,83 @@
         text-align: center;
       }
 
-      #intro {
-        font-size: 16px;
-        line-height: 1.4;
+      #background-img {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        object-position: center;
+        z-index: 0;
+        display: none;
       }
 
+      @media only screen and (min-width: 1280px) {
+        #background-img {        
+          display: block;
+        }
+      }
+
+      #wrapper {
+        width:100%;
+        padding: 0px;
+        background-color: rgba(255,255,255,1);
+        position: relative;
+        border-radius:10px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #wrapper {
+          margin: auto;
+          width: 760px;
+          padding: 0px 24px 24px;
+        }
+      }
+
+      #logo {
+        display:none;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #logo {
+          display:block;
+          width:250px;
+          margin:auto;
+        }
+      }
+
+      #intro {
+        @apply --body-font-mobile;        
+        margin: 16px auto;
+      }
+
+      #intro br {
+        display: none;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #intro {
+          @apply --body-font-desktop;   
+          margin: 24px auto 48px;     
+        }
+
+        #intro br {
+          display:block;
+        }
+      }      
+
       #switch {
-        background: rgba(230,230,230,0.58);
+        background-color: var(--gofrank-lightgray);
         border-radius: 100px;
-        background: #E6E6E6;
         border-radius: 100px;
-        font-size: 14px;
-        color: #000000;
-        letter-spacing: 0.47px;
+        color: var(--gofrank-black);
         text-align: center;
         display: flex;
-        height: 39px;
-        margin: 24px 0;
+        height: 40px;
+        width: 90%;
+        margin: 24px auto;
+        @apply --ui-font-mobile;
+        font-style: bold;
       }
 
       #switch > div {
@@ -37,23 +98,38 @@
         border-radius: 100px;
       }
 
+      @media only screen and (min-width: 1280px) {
+        #switch {
+          @apply --ui-font-desktop;
+          width: 35%;
+        }
+      }      
+
       .active {
-        background: #00E2FF;
+        background: var(--gofrank-lightblue);
         font-weight: bold;
       }
 
       #categories {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        --border: 1px solid #E6E6E6;
+        --border: 1px solid var(--gofrank-lightgray);
+        margin: auto;
       }
+
+      @media only screen and (min-width: 1280px) {
+        #categories {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }       
 
       .child {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 30vw;
+/*        height: 20vh;
+        width: 20vh;*/
         transform-origin: 50% 50%;
       }
 
@@ -80,77 +156,89 @@
       .child:nth-child(9) {
         border-left: var(--border);
       }
+          
 
-      .child img {
+/*      .child img {
         transform: scale(1.1);
       }
-
-      .child h6 {
+*/
+      /*.child h6 {
         margin: 18px 0 0 0;
         font-size: 13px;
         font-weight: 400;
         color: rgba(0,0,0,0.48);
         text-transform: capitalize;
       }
+      */
     </style>
 
-    <article id="intro">
-      We guide you to better fashion choices. What clothes are you looking for?
+    <img id="background-img" src="src/gofrank-app/images/gf-background-home.jpg">
+
+    <div id="wrapper">
+
+      <article id="logo">
+        <img src="src/gofrank-app/images/gf-logo.svg">
+      </article>
+
+      <article id="intro">
+        We are your guide towards a clean wardrobe. <br>What can we help you look for?
+      </article>
+
+      <div id="switch">
+        <div>Women</div>
+        <div class="active">All</div>
+        <div>Men</div>
+      </div>
+
+      <section id="categories">
+        <gofrank-tile
+          icon="tops"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="bottoms"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="dresses"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="accessories"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="outerwear"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="underwear"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="bags"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="shoes"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+        <gofrank-tile
+          icon="all"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>
+      </section>
+
     </article>
-
-    <div id="switch">
-      <div>Women</div>
-      <div class="active">All</div>
-      <div>Men</div>
-    </div>
-
-    <section id="categories">
-      <gofrank-tile
-        icon="shirts"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="dresses"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="pants"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="coats"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="sweaters"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="underwear"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="accessories"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="shoes"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-      <gofrank-tile
-        icon="bags"
-        class="child"
-        on-click="_handleTileTap"
-        ></gofrank-tile>
-    </section>
 
   </template>
 
@@ -175,20 +263,22 @@
         var imgBounds = img.getBoundingClientRect();
 
         var clone = img.cloneNode(true);
-        clone.style.transformOrigin = '50% 50%';
+        clone.style.transformOrigin = '50% 50%!important';
         clone.style.transform = 'scale(1.1)';
         clone.style.position = 'absolute';
         clone.style.zIndex = 1;
         clone.style.top = imgBounds.top + 'px';
         clone.style.left = imgBounds.left + 'px';
+        clone.style.width = imgBounds.width + 'px';
+        clone.style.height = imgBounds.height + 'px';
         clone.style.transition = '0.6s all ease';
         window.document.body.appendChild(clone);
 
         window.setTimeout(() => {
           window.requestAnimationFrame(() => {
-            clone.style.left = `calc(50% + ${imgBounds.width / 4}px)`;
-            clone.style.top = '36px';
-            clone.style.transform = 'scale(1.5) translateX(-50%)';
+            clone.style.left = `50%`;
+            clone.style.top = '18px';
+            clone.style.transform = 'scale(1.25) translateX(-50%)';
           })
         }, 0);
 
