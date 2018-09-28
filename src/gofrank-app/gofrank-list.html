@@ -16,10 +16,16 @@
       }
 
       header h1 {
-        margin: 48px 0 0 0;
+        margin: 24px 0 0 0;
         font-weight: normal;
         line-height: 1.2;
         font-size: 16px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        header h1 {
+          margin: 48px 0 0 0;
+        }
       }
 
       header h1 strong {
@@ -31,6 +37,34 @@
         transform: scale(1.5);
         opacity: 0;
         height: 24px;
+/*        background-image:url('src/gofrank-app/images/gf-swash.png');        
+*/      }
+
+      header #icon-background {
+        width:100px;
+        margin: -20px 50px 0 0;
+      }
+
+      #filter {
+        display:flex;
+        justify-content:center;
+        margin-bottom:30px;
+      }
+
+      #filter > div {
+        @apply --filter-button; 
+        @apply --ui-font-desktop;             
+        display: flex;
+        margin-right:10px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        font-weight:bold;                     
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #filter > div {
+        }
       }
 
       #list {
@@ -97,10 +131,9 @@
       #list li .textbox {
         flex: 1;
         text-align: left;
-        padding: 6px 18px;
+        padding: 0px 18px;
         box-sizing: border-box;
         @apply --ui-font-desktop;
-        font-size:16px;
       }
 
       @media only screen and (min-width: 1280px) {
@@ -113,24 +146,35 @@
           background-color: rgba(255,255,255,0.95);
           text-align:center;
           padding:12px;
+          font-size:16px;
         }
       }
 
       #list li .textbox h2 {
-        margin: 0 0 6px 0; 
+        margin: 0; 
         @apply --heading-font;
+        font-size:27px;
       }
 
       @media only screen and (min-width: 1280px) {
         #list li .textbox h2 {
+           margin: 0 0 6px 0;
+          font-size:33px;
         }
       }
     </style>
 
     <header>
       <img id="icon" src="src/gofrank-app/assets/[[category]].svg" alt="icon">
+      <img id="icon-background" src="src/gofrank-app/images/gf-swash.png">
       <h1>These brands sell <strong>[[gender]] [[category]]</strong></h1>
     </header>
+
+    <div id="filter">
+      <div>Green production</div>
+      <div class="active">Fair labour</div>
+      <div>Vegan</div>
+    </div>
 
     <ul id="list">
       <li on-click="_handleItemClick">
