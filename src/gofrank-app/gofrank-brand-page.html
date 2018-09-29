@@ -5,9 +5,281 @@
     <style>
       :host {
         display: block;
-        background: #27e1fd;
       }
+
+      #header-image {
+        position:relative;
+        margin-top:60px;
+        width:100%;
+      }
+      
+      @media only screen and (min-width: 1280px) {
+
+      }
+
+      #button-wrapper {
+        position: relative;
+        display: grid;
+        grid-gap:16px;
+        grid-template-columns: 1fr 1fr;
+        width:300px;
+        margin:-80px auto 0;
+      }
+
+      #button-shop-online {
+        @apply --shops-button;
+      }
+
+      #button-shop-map {
+        @apply --shops-button;
+        background-color: white;
+        /*border: 1px solid var(--gofrank-lightblue);*/
+      }
+
+      #brand-intro {
+        text-align:center;
+        width:100%;
+        margin:auto;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #brand-intro {
+          width:1200px;
+        }
+      }
+
+      #metadata {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        text-align:center;
+        margin: 32px auto;
+        grid-gap:16px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #metadata {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          margin:80px;
+        }
+      }
+
+      .metadata-heading {
+        @apply --ui-font-desktop;
+        margin-top:32px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #metadata-heading {
+          margin-top:0px;
+        }
+      }       
+
+      .metadata-content {
+        margin-top:5px;
+        @apply --heading-font-small;
+      }
+     
+
+      .brand-subtitle {
+        @apply --body-font-desktop;
+        font-weight:bold;
+        font-size:18px;
+        margin:80px auto 0;
+        text-align:center;
+        position:relative;        
+        z-index:2;        
+      }
+
+      .brand-subtitle-bg {
+        width:130px;
+        margin-top:-5px;
+        position:relative;
+        z-index:1;
+      }
+
+      #dash-01 {
+        margin-top:-32px;
+      }
+
+
+      #brand-title {
+        @apply --heading-font;
+        font-size:80px;
+        margin-top:24px;
+        text-align: center;
+      }
+
+      #introduction {
+        @apply --body-font-desktop;
+        font-size:23px;
+        line-height:36px;
+        margin:64px auto 0;
+        width:900px;
+      }
+
+      #brand-content {
+        text-align:center;
+      }
+
+      #brand-label-wrapper {
+        margin: auto;
+        width:800px;
+        grid-gap:16px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .brand-label {
+        background-color: var(--gofrank-lightblue-50);
+        padding: 0px 20px 20px;
+        text-align:center;
+        margin-top:64px;
+      }
+
+      .brand-label img {
+        width:80px;
+        margin-top:-40px;
+      }
+
+      .brand-label p {
+        text-align: left;
+        --body-font-desktop;
+        font-size:18px;
+        line-height:27px;
+      }
+
+      .brand-label h3 {
+        --body-font-desktop;
+        font-size:18px;
+      }
+
+      #brand-sample-gallery {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height:400px;
+        grid-gap:16px;
+        margin-top:32px;
+      }
+
+      #brand-sample {
+        text-align:center;
+      }
+
+      #brand-sample-gallery img {
+        height:100%;
+      }
+
+      #brand-map {
+        text-align:center;
+      }
+
     </style>
+
+    <header>
+      <img id="header-image" src="src/gofrank-app/images/header.jpg">
+
+      <div id="button-wrapper">
+        <div id="button-shop-online">
+          Shop online
+        </div>
+        <div id="button-shop-map">
+          Shops on map
+        </div>
+      </div>
+    </header>
+
+    <section id="brand-intro">
+
+      <section id="metadata">
+
+        <article class="metadata-element">
+          <div class="metadata-heading">Country of origin</div>
+          <div class="metadata-content">Sweden</div>
+        </article>
+
+        <article class="metadata-element">
+          <div class="metadata-heading">Founder</div>
+          <div class="metadata-content">Maria Erixon Levin</div>
+        </article>
+
+        <article class="metadata-element">
+          <div class="metadata-heading">Collection</div>
+          <div class="metadata-content">Menswear, Womenswear</div>
+        </article>
+
+        <article class="metadata-element">
+          <div class="metadata-heading">Website</div>
+          <div class="metadata-content">www.nudiejeans.com/</div>
+        </article>                        
+      </section>
+
+      <h2 class="brand-subtitle">Unisex Rock 'n Roll</h2>
+      <img class="brand-subtitle-bg" id="dash-01" src="src/gofrank-app/images/dash-01.svg">
+      <h1 id="brand-title">Nudie Jeans</h1>
+
+      <article id="introduction">
+        Meet Nudie jeans, a role-model brand that does not only focus on fair and transparent production, but on sustainable ownership as well. They offer free repairs, and actively foster a long-lasting relationship between the pair and its owner. By telling the owners to wash only twice a year, and to cherish scratches or stains as marks of life. By trying to get them to look at their jeans like a fine bottle of wine – both being things that get better with age. If all goes as planned, owner and jeans become one. Like a second skin. Well well, denim and romance. Who would’ve thought?
+      </article>
+
+  </section>
+
+  <section id="brand-content">
+
+      <h2 class="brand-subtitle">
+        So why this brand?
+      </h2>
+      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+
+      <section id="brand-label-wrapper">
+
+        <article class="brand-label">
+          <img src="src/gofrank-app/images/icon-green-production.svg">
+          <h3>Green production</h3>
+          <p class="content-label-text">
+            Nudie Jeans has free repair shops, where you can either get your old pair repaired for free, or hand them in and receive 20% off your next purchase. The jeans will either be resold as second-hand, or recycled. If you don’t live close to a shop, you can order a free repair kit. 
+          </p>
+        </article>
+
+        <article class="brand-label">
+          <img src="src/gofrank-app/images/icon-vegan.svg">
+          <h3>Fair labour</h3>
+          <p class="content-label-text">
+            Around 70% of Nudie Jean’s garments are made in Europe. In production countries such as India (5%) where there’s a difference between minimum and livable wage, Nudie compensates. They have been a member of the Fair Wear Foundation since 2009 and have ranked as a leader position for years now, ensuring fair working conditions throughout their production chain. Lastly, they are fully transparent about where their clothes are made. You may find more detailed information in the social report on their website.
+          </p>
+        </article>
+
+      </section>
+
+  </section>
+
+  <section id="brand-sample">
+
+      <h2 class="brand-subtitle">
+        Collection sample
+      </h2>
+      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+
+      <article id="brand-sample-gallery">
+        <img class="content-label-image" src="src/gofrank-app/images/collection-1.jpg">
+        <img class="content-label-image" src="src/gofrank-app/images/collection-2.jpg">
+        <img class="content-label-image" src="src/gofrank-app/images/collection-3.jpg">
+        <img class="content-label-image" src="src/gofrank-app/images/collection-4.jpg">
+        <img class="content-label-image" src="src/gofrank-app/images/collection-5.jpg">
+      </article>
+
+  </section>  
+
+    <section id="brand-map">
+
+      <h2 class="brand-subtitle">
+        Where to buy this brand
+      </h2>
+      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+
+      <article id="map">
+      </article>
+
+  </section>  
 
   </template>
 
