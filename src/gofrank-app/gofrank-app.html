@@ -109,7 +109,9 @@
       }
 
       #brand-page {
-        position: fixed;
+        position:absolute;
+        left:0px;
+/*        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -118,7 +120,7 @@
         clip-path: circle(0px at center);
         -webkit-clip-path: circle(0px at center);
         transition: 1s clip-path ease;
-        z-index: 2;
+        z-index: 2;*/
       }
 
       :host([page="detail"]) #brand-page {
@@ -127,7 +129,7 @@
       }
     </style>
 
-    <header>
+    <!-- <header>
       <div id="logo">
         <img src="src/gofrank-app/logo.svg" alt="logo">
       </div>
@@ -144,7 +146,7 @@
 
 
     <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
-    <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list>
+    <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list> -->
     <gofrank-brand-page id="brand-page" class="page"></gofrank-brand-page>
     
   </template>
