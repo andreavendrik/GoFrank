@@ -10,6 +10,7 @@
     html {
       --gofrank-lightgray: #F2F2F2;
       --gofrank-lightblue: #59ecff;
+      --gofrank-lightblue-50: #EDFDFF;
       --gofrank-blue: #363ED3;
       --gofrank-green: #3ACAAC;
       --gofrank-black: #000000;     
@@ -17,12 +18,21 @@
       padding: 0;
 
       --heading-font: {
-      	font-family: 'Lydian', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+      	font-family: 'Lydian', -apple-system, 'Helvetica Neue', Helvetica;
   		font-size: 35px;
   		line-height: 40px;
   		font-weight: bold;
   		font-style: italic;
+  		letter-spacing:0px;
       }
+
+    --heading-font-small: {
+    	font-family: 'Lydian', -apple-system, 'Helvetica Neue', Helvetica;
+    	font-size: 21px;
+    	line-height:21px;
+    	font-weight:normal;
+    	letter-spacing:0px;
+    }
 
       --body-font-desktop: {
       	font-family: 'HK Grotesk', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
@@ -73,6 +83,25 @@
         text-align: center;
         height: 40px;
         padding: 0px 20px;
+        cursor:pointer;
+      }
+
+      --shops-button: {
+      	background-color: var(--gofrank-lightblue);
+      	border-radius: 100px;
+      	color: var(--gofrank-blue);
+        text-align: center;
+        height: 50px;
+        padding: 0px 20px;
+        font-size:18px;      
+        font-weight:bold;	
+        width:175px;
+        box-sizing:border-box;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        box-shadow:1px 1px 3px 0px rgba(0,0,0,0.25);
       }
 
     }
