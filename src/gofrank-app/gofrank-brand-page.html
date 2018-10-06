@@ -7,9 +7,12 @@
         display: block;
       }
 
+      header {
+        width:100vw;
+      }
+
       #header-image {
         position:relative;
-        margin-top:60px;
         width:100%;
         height:300px;
         object-fit:cover;
@@ -33,7 +36,7 @@
       @media only screen and (min-width: 1280px) {
         #button-wrapper {
           grid-gap:16px;
-          width:300px;
+          width:366px;
           margin:-96px auto 0;          
         }
       }
@@ -66,35 +69,81 @@
         width:100%;
         margin:auto;
         box-sizing:border-box;
-        padding:0px 12px;         
+        padding:0px 16px;   
+        display:grid;
+        grid-template-areas: "a a" "b b" "c c" "d e" "f g";
+        grid-template-columns: 1fr 1fr;        
+        text-align:center;
+        margin: 48px auto 64px;
+        grid-gap:0px 16px;
       }
 
       @media only screen and (min-width: 1280px) {
         #brand-intro {
-          width:1200px;
+          width:100%;
+          grid-template-areas: "a b c d" "e e e e" "f f f f" "g g g g";
+          grid-template-columns: 1fr 1fr 1fr 1fr;
           text-align:center;
+          margin: 64px auto;
         }
       }
 
-      #metadata {
-        display:grid;
-        grid-template-columns: 1fr;
-        text-align:center;
-        margin: 48px auto;
-        grid-gap:16px;
-        width:90%;
+      #metadata-element-1 {
+        grid-area:d;
+        margin-top:30px;
       }
+      @media only screen and (min-width: 1280px) {
+        #metadata-element-1 {
+          margin-top:0px;
+        }
+      }
+
+      #metadata-element-2 {
+        grid-area:e;
+        margin-top:30px;                
+      }
+      @media only screen and (min-width: 1280px) {
+        #metadata-element-2 {
+          margin-top:0px;
+        }
+      }      
+      #metadata-element-3 {
+        grid-area:f;
+        margin-top:15px;                
+      }
+      @media only screen and (min-width: 1280px) {
+        #metadata-element-3 {
+          margin-top:0px;
+        }
+      }      
+      #metadata-element-4 {
+        grid-area:g;
+        margin-top:15px;                        
+      }
+      @media only screen and (min-width: 1280px) {
+        #metadata-element-4 {
+          margin-top:0px;
+        }
+      }      
 
       @media only screen and (min-width: 1280px) {
-        #metadata {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          margin:80px;
-        }
+        #metadata-element-1 {
+          grid-area:a;
+        }     
+        #metadata-element-2 {
+          grid-area:b;
+        }      
+        #metadata-element-3 {
+          grid-area:c;
+        }      
+        #metadata-element-4 {
+          grid-area:d;
+        }                                       
       }
 
       .metadata-heading {
         @apply --ui-font-mobile;
-        margin-top:6px;
+        margin-top:16px;
       }
 
       @media only screen and (min-width: 1280px) {
@@ -119,30 +168,55 @@
         @apply --body-font-desktop;
         font-weight:bold;
         font-size:18px;
-        margin:60px auto 0;
+        margin:48px auto 0;
         text-align:center;
         position:relative;        
         z-index:2;        
+        grid-area:a;
       }
 
      @media only screen and (min-width: 1280px) {
         .brand-subtitle {
           text-align:center;
           margin:80px auto 0;
+          grid-area:e;          
         }
       }      
+
+      #brand-tag {
+        margin-top: 32px;
+      }
+
+     @media only screen and (min-width: 1280px) {
+        #brand-tag {
+          margin-top:80px;      
+        }
+      }       
 
       .brand-subtitle-bg {
         width:130px;
         margin-top:-5px;
         position:relative;
         z-index:1;
-        /*left: calc(50% - 65px);*/
+        grid-area:a;
       }
 
+     @media only screen and (min-width: 1280px) {
+        .brand-subtitle-bg {
+          grid-area:e;          
+        }
+      }          
+
       #dash-01 {
-        margin-top:-32px;
+        left: calc(50% - 65px);
+        margin-top:20px;
       }
+
+     @media only screen and (min-width: 1280px) {
+        #dash-01 {
+          margin-top:75px;        
+        }
+      }               
 
 
       #brand-title {
@@ -150,13 +224,15 @@
         font-size:50px;
         line-height:50px;
         margin:-10px auto 0;
+        grid-area: b;
       }
 
       @media only screen and (min-width: 1280px) {
         #brand-title {
-          margin-top:24px;
+          margin-top:0  px;
           font-size:80px;
           line-height:80px;
+          grid-area:f;          
         }
       }          
 
@@ -167,22 +243,23 @@
         margin:32px auto 0;
         width:100%;
         text-align:left;
+        grid-area:c;
       }
 
       @media only screen and (min-width: 1280px) {
         #introduction {
           font-size:23px;
           line-height:36px;
-          margin:64px auto 0;
           width:810px;          
           text-align:center;
+          grid-area:g;
         }
       }           
 
       #brand-content {
         text-align:center;
         box-sizing:border-box;
-        padding:0px 12px;        
+        padding:0px 16px;        
       }
 
       @media only screen and (min-width: 1280px) {
@@ -207,19 +284,26 @@
 
       .brand-label {
         background-color: var(--gofrank-lightblue-50);
-        padding: 0px 20px;
+        padding: 0px 16px;
         text-align:center;
-        margin-top:64px;
+        margin-top:48px;
       }
+      @media only screen and (min-width: 1280px) {
+        #brand-label {
+          margin-top:64px;
+        }
+}            
 
       .brand-label img {
-        width:80px;
-        margin-top:-40px;
+        width:75px;
+        margin-top:-30px;
       }
 
       .brand-label p {
         text-align: left;
         @apply --body-font-mobile;
+        font-size:18px;
+        line-height:27px;
       }
       @media only screen and (min-width: 1280px) {
         .brand-label p {
@@ -229,8 +313,10 @@
       }      
 
       .brand-label h3 {
-        --body-font-desktop;
+        @apply --body-font-desktop;
+        font-weight:bold;
         font-size:18px;
+        margin:10px auto 0px;
       }
 
       #brand-sample-gallery {
@@ -270,30 +356,27 @@
 
     <section id="brand-intro">
 
-      <section id="metadata">
-
-        <article class="metadata-element">
+        <article id="metadata-element-1">
           <div class="metadata-heading">Country of origin</div>
           <div class="metadata-content">Sweden</div>
         </article>
 
-        <article class="metadata-element">
+        <article id="metadata-element-2">
           <div class="metadata-heading">Founder</div>
           <div class="metadata-content">Maria Erixon Levin</div>
         </article>
 
-        <article class="metadata-element">
+        <article id="metadata-element-3">
           <div class="metadata-heading">Collection</div>
           <div class="metadata-content">Menswear, Womenswear</div>
         </article>
 
-        <article class="metadata-element">
+        <article id="metadata-element-4">
           <div class="metadata-heading">Website</div>
           <div class="metadata-content">www.nudiejeans.com/</div>
         </article>                        
-      </section>
 
-      <h2 class="brand-subtitle">Unisex Rock 'n Roll</h2>
+      <h2 class="brand-subtitle" id="brand-tag">Unisex Rock 'n Roll</h2>
       <img class="brand-subtitle-bg" id="dash-01" src="src/gofrank-app/images/dash-01.svg">
       <h1 id="brand-title">Nudie Jeans</h1>
 
