@@ -2,6 +2,9 @@
 <link rel="import" href="gofrank-home.html">
 <link rel="import" href="gofrank-list.html">
 <link rel="import" href="gofrank-brand-page.html">
+<link rel="import" href="gofrank-about-page.html">
+<link rel="import" href="gofrank-footer.html">
+
 
 <dom-module id="gofrank-app">
   <template>
@@ -30,13 +33,14 @@
       }
 
       #logo {
+        height:38px;
         flex: 1;
         transition: 0.5s opacity;
         text-align: center;
       }
 
       #logo img {
-        height: 45px;
+        height: 100%;
       }
 
       @media only screen and (min-width: 1280px) {
@@ -130,7 +134,7 @@
       }
     </style>
 
-    <!-- <header>
+    <header>
       <div id="logo">
         <img src="src/gofrank-app/logo.svg" alt="logo">
       </div>
@@ -146,10 +150,12 @@
     </header>
 
 
-    <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
+<!--     <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
     <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list> -->
     <gofrank-brand-page id="brand-page" class="page"></gofrank-brand-page>
     
+<!--  <gofrank-about-page id="about-page"></gofrank-about-page>
+ -->  <gofrank-footer id="footer"></gofrank-footer>
   </template>
 
   <script>
