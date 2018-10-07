@@ -1,0 +1,105 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="gofrank-footer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #footer-content {
+        display:grid;
+        grid-gap:16px 48px;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        background-color: var(--gofrank-lightgray);
+        color: black;
+        width: 100vw;
+        height: 100%;
+        margin: 35px auto 0;
+        padding: 24px 16px 48px;
+        box-sizing:border-box;
+        @apply --body-font-mobile;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        #footer-content {
+          grid-template-columns: 26% 26% 26%;
+          padding: 50px 50px 75px;
+        }
+      }
+
+      #footer-content h4 {
+        margin:10px auto 0px;
+      }
+
+      #footer-content p {
+        margin: 5px auto 0px;
+      }
+
+      #footer-content a {
+        color: black!important;
+      }
+
+      #footer-content-section {
+        margin-right: 50px;
+        display: block;
+        flex: 1;   
+      }
+
+      #footer-content-section img {
+        width: 150px;
+        margin-top: 20px;
+      }
+     
+    </style>
+
+
+    <div id="footer-content">
+        <div class="footer-section">
+          <h4>What?</h4>    
+          <p>
+            <span>Go Frank</span> is a platform devoted to helping people who want to start making sustainable and fair fashion choices.
+            Read more about it <a href="<?php echo esc_url( home_url( '/about' ) );?>" rel="about">here.</a>
+
+        </div>
+        <div class="footer-section">
+          <h4>Who?</h4>
+          <p>
+            Go Frank is an initiative by Jonne Bosselaar and Andrea Vendrik.
+            Any questions, remarks, shout outs? <a href="mailto:hello@gofrank.me">Email us</a>.
+         
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Get Frank</h4>
+          <p>
+            Follow us on <a href="https://www.instagram.com/gofrankfashion" target="_blank">Instagram</a>, <a href="https://www.facebook.com/gofrankme" target="_blank">Facebook</a> or <a href="https://www.twitter.com/gofrankme" target="_blank">Twitter</a> for the latest news!
+          </p>  
+        </div>
+      </div>
+   
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankFooter extends Polymer.Element {
+      static get is() { return 'gofrank-footer'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankFooter.is, GofrankFooter);
+  </script>
+</dom-module>
