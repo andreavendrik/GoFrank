@@ -68,12 +68,14 @@
       #about-intro {
         margin-top:80px;
         padding: 16px;
+        box-sizing: border-box;
+        max-width: 100%;
+        width:600px;
       }
 
       @media only screen and (min-width: 1024px) {     
         #about-intro {
-          width:600px;
-          margin:160px auto 0px;
+          margin-top:160px;
         }
       }      
 
@@ -116,6 +118,7 @@
       @media only screen and (min-width: 1024px) {   
         #about-us-img {
           width: 900px;
+          max-width: 100%;
           margin: 32px auto;
           height:400px;
           object-fit:cover;
@@ -130,6 +133,7 @@
       @media only screen and (min-width: 1024px) {
         #about-us-general {
           width:600px;
+          max-width: 100%;
           margin:48px auto 16px;
           text-align:center;
         }
@@ -148,6 +152,7 @@
           flex-direction: row;
           margin:auto;
           width:800px;
+          max-width: 100%;
         }
       }
 
@@ -190,17 +195,11 @@
 
       #faq {
         padding: 16px;
-        width:100%;
+        width:600px;
+        max-width:100%;
         margin:auto;
         box-sizing: border-box;
       }
-
-
-     @media only screen and (min-width: 1024px) {
-        #faq {
-          width:600px;
-        }
-      }    
 
       #faq h3 {
         @apply --heading-font-small;
@@ -224,9 +223,9 @@
     </style>
 
     <header>
-      <img id="background-img" src="src/gofrank-app/images/gf-background-about.jpg">
-      <img id="background-illustration" src="src/gofrank-app/images/gf-about-illustrations-02.png">
-      <img id="background-swash" src="src/gofrank-app/images/gf-about-swash.png">      
+      <img id="background-img" src="../images/gf-background-about.jpg">
+      <img id="background-illustration" src="../images/gf-about-illustrations-02.png">
+      <img id="background-swash" src="../images/gf-about-swash.png">      
       
        <h1>
           Our Mission
@@ -256,12 +255,12 @@
 
       <section id="about-us-wrapper">
         <h2 class="about-subtitle">About us</h2>
-        <img class="about-subtitle-bg" src="src/gofrank-app/images/dash-01.svg">
+        <img class="about-subtitle-bg" src="../images/dash-01.svg">
         <div id="about-us-general">
           <b>We are Jonne Bosselaar and Andrea Vendrik from Amsterdam.</b> We strongly believe in the importance of fair labour and sustainable production in the fashion industry, and felt a clear overview of both fair fashion brands and shops was lacking on the internet. And so we got to work.
         </div>
 
-        <img id="about-us-img" src="src/gofrank-app/images/jonne-andrea.jpg">
+        <img id="about-us-img" src="../images/jonne-andrea.jpg">
          <div id="about-us-personal">
           <p id="about-us-jonne">
             <b>Jonne Bosselaar (left) is an expert in fair fashion.</b> In Bangalore she worked for a research group focusing on labour issues in the Indian garment industry as well as she conducted her own independent research for which she spoke with garment workers, union members and factory owners. Plus, fair fashion is only thing in her closet.
@@ -277,16 +276,16 @@
 
       <section id="faq">
         <h2 class="about-subtitle">Frequently asked questions</h2>
-        <img class="about-subtitle-bg" src="src/gofrank-app/images/dash-01.svg"> 
+        <img class="about-subtitle-bg" src="../images/dash-01.svg"> 
         
         <div class="faq-question">
-          <img class="arrow" src="src/gofrank-app/images/arrow.svg">
+          <img class="arrow" src="../images/arrow.svg">
           <h3>What is Go Frank?</h3>
           <p>Go Frank is a website showcasing fashion brands that contribute to a better world. Brands with a good story and a just cause. Brands that are open about their productive methods. We are not a shop, we simply offer an overview. </p>
         </div>
 
         <div class="faq-question">
-          <img class="arrow" src="src/gofrank-app/images/arrow.svg">
+          <img class="arrow" src="../images/arrow.svg">
           <h3>What is so bad about the fashion industry anyway?</h3>
           <p>The fashion industry – and especially the fast fashion industry – has a devastating effect on both people and our earth. To start with, the fashion industry is the second most polluting industry in the world. Chemicals, enormous water use (a conventional jeans costs for example 7000 liters of water!), electricity and transport are just a few components of the pollution. Secondly, fashion often goes hand in hand with precarious working conditions for those who make it. Long hours, small wages, unpaid overtime, no freedom of association and unsafe working environments are often part of the deal. To change this, we need brands and consumers to decide to do it differently. For more information about this, we refer you to the Clean Clothes Campaign.</p>
         </div>
@@ -300,8 +299,12 @@
 
   <script>
     /**
+     * `gofrank-about-page`
+     * 
+     *
      * @customElement
      * @polymer
+     * @demo demo/gofrank-about-page.html
      */
     class GofrankAboutPage extends Polymer.Element {
       static get is() { return 'gofrank-about-page'; }
