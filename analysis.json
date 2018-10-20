@@ -418,11 +418,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 461,
+              "line": 464,
               "column": 10
             },
             "end": {
-              "line": 464,
+              "line": 467,
               "column": 11
             }
           },
@@ -443,11 +443,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 457,
+          "line": 460,
           "column": 4
         },
         "end": {
-          "line": 468,
+          "line": 471,
           "column": 5
         }
       },
@@ -460,11 +460,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 461,
+              "line": 464,
               "column": 10
             },
             "end": {
-              "line": 464,
+              "line": 467,
               "column": 11
             }
           },
@@ -624,7 +624,7 @@
       "tagname": "gofrank-map-page"
     },
     {
-      "description": "",
+      "description": "`gofrank-footer`",
       "summary": "",
       "path": "gofrank-footer.html",
       "properties": [
@@ -635,11 +635,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 97,
               "column": 10
             },
             "end": {
-              "line": 96,
+              "line": 100,
               "column": 11
             }
           },
@@ -651,15 +651,20 @@
       ],
       "methods": [],
       "staticMethods": [],
-      "demos": [],
+      "demos": [
+        {
+          "url": "demo/gofrank-footer.html",
+          "description": ""
+        }
+      ],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 89,
+          "line": 93,
           "column": 4
         },
         "end": {
-          "line": 100,
+          "line": 104,
           "column": 5
         }
       },
@@ -672,11 +677,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 93,
+              "line": 97,
               "column": 10
             },
             "end": {
-              "line": 96,
+              "line": 100,
               "column": 11
             }
           },
