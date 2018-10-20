@@ -407,7 +407,7 @@
       "tagname": "gofrank-map"
     },
     {
-      "description": "",
+      "description": "`gofrank-about-page`",
       "summary": "",
       "path": "gofrank-brand-page.html",
       "properties": [
@@ -418,11 +418,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 457,
+              "line": 461,
               "column": 10
             },
             "end": {
-              "line": 460,
+              "line": 464,
               "column": 11
             }
           },
@@ -434,15 +434,20 @@
       ],
       "methods": [],
       "staticMethods": [],
-      "demos": [],
+      "demos": [
+        {
+          "url": "demo/gofrank-brand-page.html",
+          "description": ""
+        }
+      ],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 453,
+          "line": 457,
           "column": 4
         },
         "end": {
-          "line": 464,
+          "line": 468,
           "column": 5
         }
       },
@@ -455,11 +460,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 457,
+              "line": 461,
               "column": 10
             },
             "end": {
-              "line": 460,
+              "line": 464,
               "column": 11
             }
           },
@@ -487,11 +492,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 313,
+              "line": 312,
               "column": 10
             },
             "end": {
-              "line": 316,
+              "line": 315,
               "column": 11
             }
           },
@@ -512,11 +517,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 309,
+          "line": 308,
           "column": 4
         },
         "end": {
-          "line": 320,
+          "line": 319,
           "column": 5
         }
       },
@@ -529,11 +534,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 313,
+              "line": 312,
               "column": 10
             },
             "end": {
-              "line": 316,
+              "line": 315,
               "column": 11
             }
           },

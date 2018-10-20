@@ -8,7 +8,7 @@
       }
 
       header {
-        width:100vw;
+        width:100%;
       }
 
       #header-image {
@@ -31,6 +31,7 @@
         grid-gap:10px;
         grid-template-columns: 1fr 1fr;
         width:260px;
+        max-width: 100%;
         margin:-72px auto 0;
       }
       @media only screen and (min-width: 1024px) {
@@ -241,7 +242,8 @@
         font-size:18px;
         line-height:25px;
         margin:32px auto 0;
-        width:100%;
+        width:810px;
+        max-width:100%;
         text-align:left;
         grid-area:c;
       }
@@ -250,7 +252,6 @@
         #introduction {
           font-size:23px;
           line-height:36px;
-          width:810px;          
           text-align:center;
           grid-area:g;
         }
@@ -269,7 +270,8 @@
 
       #brand-label-wrapper {
         margin: auto;
-        width:100%;
+        width:850px;
+        max-width:100%;
         grid-gap:16px;
         display:grid;
         grid-template-columns: 1fr;
@@ -277,7 +279,6 @@
 
       @media only screen and (min-width: 1024px) {
         #brand-label-wrapper {
-          width:850px;
           grid-template-columns: 1fr 1fr;
         }
 }      
@@ -325,6 +326,8 @@
         height:400px;
         grid-gap:16px;
         margin-top:32px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       #brand-sample {
@@ -342,7 +345,7 @@
     </style>
 
     <header>
-      <img id="header-image" src="src/gofrank-app/images/header.jpg">
+      <img id="header-image" src="../images/header.jpg">
 
       <div id="button-wrapper">
         <div id="button-shop-online">
@@ -377,7 +380,7 @@
         </article>                        
 
       <h2 class="brand-subtitle" id="brand-tag">Unisex Rock 'n Roll</h2>
-      <img class="brand-subtitle-bg" id="dash-01" src="src/gofrank-app/images/dash-01.svg">
+      <img class="brand-subtitle-bg" id="dash-01" src="../images/dash-01.svg">
       <h1 id="brand-title">Nudie Jeans</h1>
 
       <article id="introduction">
@@ -391,12 +394,12 @@
       <h2 class="brand-subtitle">
         So why this brand?
       </h2>
-      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
 
       <section id="brand-label-wrapper">
 
         <article class="brand-label">
-          <img src="src/gofrank-app/images/icon-green-production.svg">
+          <img src="../images/icon-green-production.svg">
           <h3>Green production</h3>
           <p class="content-label-text">
             Nudie Jeans has free repair shops, where you can either get your old pair repaired for free, or hand them in and receive 20% off your next purchase. The jeans will either be resold as second-hand, or recycled. If you don’t live close to a shop, you can order a free repair kit. 
@@ -404,7 +407,7 @@
         </article>
 
         <article class="brand-label">
-          <img src="src/gofrank-app/images/icon-vegan.svg">
+          <img src="../images/icon-vegan.svg">
           <h3>Fair labour</h3>
           <p class="content-label-text">
             Around 70% of Nudie Jean’s garments are made in Europe. In production countries such as India (5%) where there’s a difference between minimum and livable wage, Nudie compensates. They have been a member of the Fair Wear Foundation since 2009 and have ranked as a leader position for years now, ensuring fair working conditions throughout their production chain. Lastly, they are fully transparent about where their clothes are made. You may find more detailed information in the social report on their website.
@@ -420,14 +423,14 @@
       <h2 class="brand-subtitle">
         Collection sample
       </h2>
-      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
 
       <article id="brand-sample-gallery">
-        <img class="content-label-image" src="src/gofrank-app/images/collection-1.jpg">
-        <img class="content-label-image" src="src/gofrank-app/images/collection-2.jpg">
-        <img class="content-label-image" src="src/gofrank-app/images/collection-3.jpg">
-        <img class="content-label-image" src="src/gofrank-app/images/collection-4.jpg">
-        <img class="content-label-image" src="src/gofrank-app/images/collection-5.jpg">
+        <img class="content-label-image" src="../images/collection-1.jpg">
+        <img class="content-label-image" src="../images/collection-2.jpg">
+        <img class="content-label-image" src="../images/collection-3.jpg">
+        <img class="content-label-image" src="../images/collection-4.jpg">
+        <img class="content-label-image" src="../images/collection-5.jpg">
       </article>
 
   </section>  
@@ -437,7 +440,7 @@
       <h2 class="brand-subtitle">
         Where to buy this brand
       </h2>
-      <img class="brand-subtitle-bg" src="src/gofrank-app/images/dash-02.svg">
+      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
 
       <article id="map">
       </article>
@@ -448,8 +451,12 @@
 
   <script>
     /**
+     * `gofrank-about-page`
+     * 
+     *
      * @customElement
      * @polymer
+     * @demo demo/gofrank-brand-page.html
      */
     class GofrankBrandPage extends Polymer.Element {
       static get is() { return 'gofrank-brand-page'; }
