@@ -37,7 +37,7 @@
         transform: scale(1.5);
         opacity: 0;
         height: 24px;
-/*        background-image:url('src/gofrank-app/images/gf-swash.png');        
+/*        background-image:url('../images/gf-swash.png');        
 */      }
 
       header #icon-background {
@@ -71,6 +71,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        max-width: 100%;
       }
 
       @media only screen and (min-width: 768px) {
@@ -115,7 +116,7 @@
       @media only screen and (min-width: 768px) {  
         #list li {
           flex-direction: column;
-          height: auto;          
+          height: auto;
           cursor:pointer;
         }    
       }
@@ -201,8 +202,8 @@
     </style>
 
     <header>
-      <img id="icon" src="src/gofrank-app/assets/[[category]].svg" alt="icon">
-      <img id="icon-background" src="src/gofrank-app/images/gf-swash.png">
+      <img id="icon" src="../assets/[[category]].svg" alt="icon">
+      <img id="icon-background" src="../images/gf-swash.png">
       <h1>These brands sell <strong>[[gender]] [[category]]</strong></h1>
     </header>
 
@@ -214,56 +215,56 @@
 
     <ul id="list">
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/matt.png" alt="img">
+        <img src="../images/matt.png" alt="img">
         <div class="textbox">
           <h2>Matt & Natt</h2>
           <article>Vegan Bags</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/afriek.png" alt="img">
+        <img src="../images/afriek.png" alt="img">
         <div class="textbox">
           <h2>Afriek</h2>
           <article>Made in Rwanda</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/goatorganic.png" alt="img">
+        <img src="../images/goatorganic.png" alt="img">
         <div class="textbox">
           <h2>Goat organic</h2>
           <article>Perfect behh-sics</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/peopletree.png" alt="img">
+        <img src="../images/peopletree.png" alt="img">
         <div class="textbox">
           <h2>People Tree</h2>
           <article>Vegan Bags</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/matt.png" alt="img">
+        <img src="../images/matt.png" alt="img">
         <div class="textbox">
           <h2>Matt & Natt</h2>
           <article>Vegan Bags</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/afriek.png" alt="img">
+        <img src="../images/afriek.png" alt="img">
         <div class="textbox">
           <h2>Afriek</h2>
           <article>Made in Rwanda</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/goatorganic.png" alt="img">
+        <img src="../images/goatorganic.png" alt="img">
         <div class="textbox">
           <h2>Goat organic</h2>
           <article>Perfect behh-sics</article>
         </div>
       </li>
       <li on-click="_handleItemClick">
-        <img src="src/gofrank-app/images/peopletree.png" alt="img">
+        <img src="../images/peopletree.png" alt="img">
         <div class="textbox">
           <h2>People Tree</h2>
           <article>Vegan Bags</article>
@@ -275,8 +276,12 @@
 
   <script>
     /**
+     * `gofrank-list`
+     * 
+     *
      * @customElement
      * @polymer
+     * @demo demo/gofrank-list.html
      */
     class GofrankList extends Polymer.Element {
       static get is() { return 'gofrank-list'; }
