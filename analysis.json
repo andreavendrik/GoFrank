@@ -178,11 +178,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 288,
+              "line": 289,
               "column": 10
             },
             "end": {
-              "line": 290,
+              "line": 291,
               "column": 11
             }
           },
@@ -197,11 +197,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 291,
+              "line": 292,
               "column": 10
             },
             "end": {
-              "line": 295,
+              "line": 296,
               "column": 11
             }
           },
@@ -220,11 +220,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 299,
+              "line": 300,
               "column": 6
             },
             "end": {
-              "line": 308,
+              "line": 309,
               "column": 7
             }
           },
@@ -244,11 +244,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 310,
+              "line": 311,
               "column": 6
             },
             "end": {
-              "line": 314,
+              "line": 315,
               "column": 7
             }
           },
@@ -268,11 +268,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 316,
+              "line": 317,
               "column": 6
             },
             "end": {
-              "line": 318,
+              "line": 319,
               "column": 7
             }
           },
@@ -290,11 +290,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 284,
+          "line": 285,
           "column": 4
         },
         "end": {
-          "line": 320,
+          "line": 321,
           "column": 5
         }
       },
@@ -307,11 +307,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 288,
+              "line": 289,
               "column": 10
             },
             "end": {
-              "line": 290,
+              "line": 291,
               "column": 11
             }
           },
@@ -322,11 +322,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 291,
+              "line": 292,
               "column": 10
             },
             "end": {
-              "line": 295,
+              "line": 296,
               "column": 11
             }
           },
@@ -560,7 +560,7 @@
       "tagname": "gofrank-about-page"
     },
     {
-      "description": "",
+      "description": "`gofrank-list`",
       "summary": "",
       "path": "gofrank-map-page.html",
       "properties": [
@@ -571,11 +571,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 108,
               "column": 10
             },
             "end": {
-              "line": 107,
+              "line": 111,
               "column": 11
             }
           },
@@ -587,15 +587,20 @@
       ],
       "methods": [],
       "staticMethods": [],
-      "demos": [],
+      "demos": [
+        {
+          "url": "demo/gofrank-map-page.html",
+          "description": ""
+        }
+      ],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 100,
+          "line": 104,
           "column": 4
         },
         "end": {
-          "line": 111,
+          "line": 115,
           "column": 5
         }
       },
@@ -608,11 +613,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 108,
               "column": 10
             },
             "end": {
-              "line": 107,
+              "line": 111,
               "column": 11
             }
           },
