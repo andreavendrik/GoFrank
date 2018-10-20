@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="gofrank-map">
+  <template>
+    <style>
+ 
+    </style>
+
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GofrankMap extends Polymer.Element {
+      static get is() { return 'gofrank-map'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankMap.is, GofrankMap);
+  </script>
+</dom-module>
