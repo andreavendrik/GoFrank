@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "",
+      "description": "`gofrank-tile`",
       "summary": "",
       "path": "gofrank-tile.html",
       "properties": [
@@ -13,11 +13,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 69,
+              "line": 73,
               "column": 10
             },
             "end": {
-              "line": 72,
+              "line": 76,
               "column": 11
             }
           },
@@ -29,15 +29,20 @@
       ],
       "methods": [],
       "staticMethods": [],
-      "demos": [],
+      "demos": [
+        {
+          "url": "demo/gofrank-tile.html",
+          "description": ""
+        }
+      ],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 65,
+          "line": 69,
           "column": 4
         },
         "end": {
-          "line": 76,
+          "line": 80,
           "column": 5
         }
       },
@@ -50,11 +55,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 69,
+              "line": 73,
               "column": 10
             },
             "end": {
-              "line": 72,
+              "line": 76,
               "column": 11
             }
           },
@@ -650,11 +655,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 91,
+              "line": 92,
               "column": 10
             },
             "end": {
-              "line": 94,
+              "line": 95,
               "column": 11
             }
           },
@@ -675,11 +680,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 87,
+          "line": 88,
           "column": 4
         },
         "end": {
-          "line": 98,
+          "line": 99,
           "column": 5
         }
       },
@@ -692,11 +697,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 91,
+              "line": 92,
               "column": 10
             },
             "end": {
-              "line": 94,
+              "line": 95,
               "column": 11
             }
           },
