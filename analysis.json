@@ -343,7 +343,7 @@
       "tagname": "gofrank-list"
     },
     {
-      "description": "`gofrank-about-page`",
+      "description": "`gofrank-brand-page`",
       "summary": "",
       "path": "gofrank-brand-page.html",
       "properties": [
@@ -491,7 +491,7 @@
       "tagname": "gofrank-about-page"
     },
     {
-      "description": "`gofrank-list`",
+      "description": "`gofrank-map-page`",
       "summary": "",
       "path": "gofrank-map-page.html",
       "properties": [
@@ -639,7 +639,7 @@
       "tagname": "gofrank-footer"
     },
     {
-      "description": "",
+      "description": "`gofrank-mobile-menu`",
       "summary": "",
       "path": "gofrank-mobile-menu.html",
       "properties": [
@@ -650,11 +650,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 91,
               "column": 10
             },
             "end": {
-              "line": 90,
+              "line": 94,
               "column": 11
             }
           },
@@ -666,15 +666,20 @@
       ],
       "methods": [],
       "staticMethods": [],
-      "demos": [],
+      "demos": [
+        {
+          "url": "demo/gofrank-mobile-menu.html",
+          "description": ""
+        }
+      ],
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 83,
+          "line": 87,
           "column": 4
         },
         "end": {
-          "line": 94,
+          "line": 98,
           "column": 5
         }
       },
@@ -687,11 +692,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 91,
               "column": 10
             },
             "end": {
-              "line": 90,
+              "line": 94,
               "column": 11
             }
           },

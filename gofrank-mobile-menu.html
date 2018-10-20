@@ -4,13 +4,14 @@
   <template>
     <style>
     :host {
-      position:fixed;
+      position: relative;
       top:10px;
       left:10px;
       width:calc(100% - 20px);
       height:calc(100% - 20px);
       background-color: var(--gofrank-lightblue-50);
       z-index:2;
+      display: block;
     }
 
     #logo {
@@ -57,20 +58,20 @@
     </style>
 
       <div id="logo">
-        <img src="src/gofrank-app/images/logo-wit.svg" alt="logo">
+        <img src="../images/logo-wit.svg" alt="logo">
       </div>
 
       <div id="cross">
-        <img src="src/gofrank-app/images/cross.svg" alt="cross">
+        <img src="../images/cross.svg" alt="cross">
       </div>
 
       <nav>
         <a href="/brands/">All brands</a> 
-        <img src="src/gofrank-app/images/dash-02-wit.svg" alt="logo">
+        <img src="../images/dash-02-wit.svg" alt="logo">
         <a href="/shops/">Where to buy</a> 
-        <img src="src/gofrank-app/images/dash-02-wit.svg" alt="logo">        
+        <img src="../images/dash-02-wit.svg" alt="logo">        
         <a href="/about/">About</a> 
-        <img src="src/gofrank-app/images/dash-02-wit.svg" alt="logo">        
+        <img src="../images/dash-02-wit.svg" alt="logo">        
         <a href="/blog/">Blog</a> 
       </nav>
 
@@ -78,8 +79,12 @@
 
   <script>
     /**
+     * `gofrank-mobile-menu`
+     * 
+     *
      * @customElement
      * @polymer
+     * @demo demo/gofrank-mobile-menu.html
      */
     class GofrankMobileMenu extends Polymer.Element {
       static get is() { return 'gofrank-mobile-menu'; }
