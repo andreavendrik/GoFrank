@@ -22,7 +22,7 @@
 /*        transform:rotate(3deg);
 */      }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #background-img {        
           display: block;
         }
@@ -36,7 +36,7 @@
         border-radius:10px;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #wrapper {
           margin: 40px auto;
           width: 720px;
@@ -48,7 +48,7 @@
         display:none;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #logo {
           display:block;
           width:250px;
@@ -65,14 +65,19 @@
         display: none;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 375px) {
+        #intro {
+          margin: 24px auto 32px;  
+        }         
+        #intro br {
+          display:block;
+        }      
+      }
+
+      @media only screen and (min-width: 1024px) {
         #intro {
           @apply --body-font-desktop;   
           margin: 24px auto 48px;     
-        }
-
-        #intro br {
-          display:block;
         }
       }      
 
@@ -93,7 +98,7 @@
         border-radius: 100px;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #switch {
           @apply --ui-font-desktop;
           width: 35%;
@@ -112,7 +117,7 @@
         margin: auto;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #categories {
           grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
@@ -187,7 +192,12 @@
 
       <section id="categories">
         <gofrank-tile
-          icon="tops"
+          icon="shirts"
+          class="child"
+          on-click="_handleTileTap"
+          ></gofrank-tile>        
+        <gofrank-tile
+          icon="sweaters"
           class="child"
           on-click="_handleTileTap"
           ></gofrank-tile>
@@ -226,11 +236,7 @@
           class="child"
           on-click="_handleTileTap"
           ></gofrank-tile>
-        <gofrank-tile
-          icon="all"
-          class="child"
-          on-click="_handleTileTap"
-          ></gofrank-tile>
+
       </section>
 
     </article>
