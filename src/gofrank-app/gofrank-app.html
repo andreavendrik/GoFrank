@@ -1,10 +1,12 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="gofrank-home.html">
 <link rel="import" href="gofrank-list.html">
+<link rel="import" href="gofrank-map.html">
 <link rel="import" href="gofrank-brand-page.html">
 <link rel="import" href="gofrank-about-page.html">
+<link rel="import" href="gofrank-map-page.html">
 <link rel="import" href="gofrank-footer.html">
-
+<link rel="import" href="gofrank-mobile-menu.html">
 
 <dom-module id="gofrank-app">
   <template>
@@ -17,7 +19,9 @@
         -webkit-font-smoothing: antialiased;
         margin:0px;
         padding: 0px;
-      }
+        max-height:100vh;
+/*        overflow:hidden;
+*/      }
 
       header {
         display: flex;
@@ -43,7 +47,7 @@
         height: 100%;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #logo {
           text-align: left;
         }
@@ -54,7 +58,7 @@
         height: 20px;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         #menu {
           display:none;
         }
@@ -66,7 +70,7 @@
         display: none;
       }
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 1024px) {
         nav {
           display:block;
         }
@@ -84,12 +88,12 @@
         opacity: 0;
       }
 
-      .page {
+/*      .page {
         position: absolute;
         left: 18px;
         right: 18px;
       }
-
+*/
       gofrank-home {
         transition: 0.5s opacity;
       }
@@ -113,7 +117,7 @@
       }
 
       #brand-page {
-        position:absolute;
+        position:relative;
         left:0px;
         width:100vw;
 /*        position: fixed;
@@ -136,10 +140,10 @@
 
     <header>
       <div id="logo">
-        <img src="src/gofrank-app/logo.svg" alt="logo">
+        <img src="src/gofrank-app/images/logo.svg" alt="logo">
       </div>
       <div id="menu">
-        <img src="src/gofrank-app/menu.svg" alt="menu">
+        <img src="src/gofrank-app/images/menu.svg" alt="menu">
       </div>
       <nav>
         <a href="/brands/">All brands</a> 
@@ -150,11 +154,16 @@
     </header>
 
 
-<!--     <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
-    <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list> -->
-    <gofrank-brand-page id="brand-page" class="page"></gofrank-brand-page>
+    <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
     
-<!--  <gofrank-about-page id="about-page"></gofrank-about-page>
+    <gofrank-list class="page" category="[[category]]" on-item-clicked="_showDetailPage"></gofrank-list>
+<!--     <gofrank-brand-page id="brand-page" class="page"></gofrank-brand-page>
+ --> <!--     <gofrank-about-page id="about-page"></gofrank-about-page>
+    
+
+<gofrank-map-page id="map-page" class="page"></gofrank-map-page>
+ -->
+<!--   <gofrank-mobile-menu id="mobile-menu"></gofrank-mobile-menu>
  -->  <gofrank-footer id="footer"></gofrank-footer>
   </template>
 
