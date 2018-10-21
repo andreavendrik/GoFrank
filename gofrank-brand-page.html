@@ -1,4 +1,5 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="gofrank-brand-page">
   <template>
@@ -9,442 +10,264 @@
 
       header {
         width:100%;
+        height: 300px;
+        position: relative;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        header {
+          height: 500px;
+        }
       }
 
       #header-image {
         position:relative;
         width:100%;
-        height:300px;
+        height: 100%;
         object-fit:cover;
-        object-position:center center;        
-      }
-      
-      @media only screen and (min-width: 1024px) {
-        #header-image {
-          height:500px;
-        }
+        object-position:center center;
       }
 
-      #button-wrapper {
-        position: relative;
+      #buttons {
+        position: absolute;
+        bottom: 54px;
+        left: 50%;
+        transform: translateX(-50%);
         display: grid;
-        grid-gap:10px;
         grid-template-columns: 1fr 1fr;
-        width:260px;
-        max-width: 100%;
-        margin:-72px auto 0;
-      }
-      @media only screen and (min-width: 1024px) {
-        #button-wrapper {
-          grid-gap:16px;
-          width:366px;
-          margin:-96px auto 0;          
-        }
+        grid-gap: 18px;
       }
 
-      #button-shop-online {
-        @apply --shops-button-mobile;
+      #buttons button {
+        @apply --gofrank-action-button;
       }
 
-      @media only screen and (min-width: 1024px) {
-        #button-shop-online {
-          @apply --shops-button-desktop;
-        }
-      }      
+      #shopOnline {
 
-      #button-shop-map {
-        @apply --shops-button-mobile;
+      }
+
+      #buttons #shopMap {
         background-color: white;
-        /*border: 1px solid var(--gofrank-lightblue);*/
+      }
+
+      section {
+        margin: 0 auto;
+        padding: 18px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      #what {
+        display: grid;
+        grid-gap: 54px;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'intro' 'characteristics';
+        max-width: 100%;
       }
 
       @media only screen and (min-width: 1024px) {
-        #button-shop-map {
-          @apply --shops-button-desktop;
-          background-color: white;          
+        #what {
+          grid-template-areas: 'characteristics' 'intro';
         }
-      }           
+      }
 
-      #brand-intro {
-        text-align:center;
-        width:100%;
-        margin:auto;
-        box-sizing:border-box;
-        padding:0px 16px;   
-        display:grid;
-        grid-template-areas: "a a" "b b" "c c" "d e" "f g";
-        grid-template-columns: 1fr 1fr;        
-        text-align:center;
-        margin: 48px auto 64px;
-        grid-gap:0px 16px;
+      #characteristics {
+        grid-area: characteristics;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-gap: 18px;
+        grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+        text-align: center;
+      }
+
+      @media only screen and (min-width: 1024px) {  
+        #characteristics {
+        grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      #characteristics li {
+        white-space: nowrap;
+      }
+
+      #characteristics h3 {
+        @apply --gofrank-font-h3;
+      }
+
+      #characteristics h6 {
+        @apply --gofrank-font-tiny;
+        margin: 0 0 6px 0;
+      }
+
+      #intro {
+        grid-area: intro;
+        @apply --gofrank-font-body;
+        width: 100%;
+        max-width: 600px;
+        margin: 18px auto;
+        text-align: center;
+      }
+
+      h1 {
+        @apply --gofrank-font-h1;
+        margin-bottom: 36px;
+      }
+
+      h2 {
+        @apply --gofrank-font-body;
+        font-weight: bold;
+        position: relative;
+      }
+
+      h2:before {
+        @apply --gofrank-swirl-background;
+      }
+
+      #why {
+        width:836px;
+        max-width: 100%;
+        @apply --gofrank-font-small;
+      }
+
+      #why ul {
+        list-style: none;
+        display: grid;
+        grid-gap: 18px;
+        margin: 0;
+        padding: 0;
       }
 
       @media only screen and (min-width: 1024px) {
-        #brand-intro {
-          width:100%;
-          grid-template-areas: "a b c d" "e e e e" "f f f f" "g g g g";
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          text-align:center;
-          margin: 48px auto;
-        }
-      }
-
-      #metadata-element-1 {
-        grid-area:d;
-        margin-top:30px;
-      }
-      @media only screen and (min-width: 1024px) {
-        #metadata-element-1 {
-          margin-top:0px;
-        }
-      }
-
-      #metadata-element-2 {
-        grid-area:e;
-        margin-top:30px;                
-      }
-      @media only screen and (min-width: 1024px) {
-        #metadata-element-2 {
-          margin-top:0px;
-        }
-      }      
-      #metadata-element-3 {
-        grid-area:f;
-        margin-top:15px;                
-      }
-      @media only screen and (min-width: 1024px) {
-        #metadata-element-3 {
-          margin-top:0px;
-        }
-      }      
-      #metadata-element-4 {
-        grid-area:g;
-        margin-top:15px;                        
-      }
-      @media only screen and (min-width: 1024px) {
-        #metadata-element-4 {
-          margin-top:0px;
-        }
-      }      
-
-      @media only screen and (min-width: 1024px) {
-        #metadata-element-1 {
-          grid-area:a;
-        }     
-        #metadata-element-2 {
-          grid-area:b;
-        }      
-        #metadata-element-3 {
-          grid-area:c;
-        }      
-        #metadata-element-4 {
-          grid-area:d;
-        }                                       
-      }
-
-      .metadata-heading {
-        @apply --ui-font-mobile;
-        margin-top:16px;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #metadata-heading {
-          @apply --ui-font-desktop;      
-          margin-top:0px;              
-        }
-      }       
-
-      .metadata-content {
-        @apply --heading-font-small;        
-        margin-top:5px;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        .metadata-content {
-          font-size:21px;                 
-        }
-      }          
-
-      .brand-subtitle {
-        @apply --body-font-desktop;
-        font-weight:bold;
-        font-size:18px;
-        margin:48px auto 0;
-        text-align:center;
-        position:relative;        
-        z-index:2;        
-        grid-area:a;
-      }
-
-     @media only screen and (min-width: 1024px) {
-        .brand-subtitle {
-          text-align:center;
-          margin:80px auto 0;
-          grid-area:e;          
-        }
-      }      
-
-      #brand-tag {
-        margin-top: 32px;
-      }
-
-     @media only screen and (min-width: 1024px) {
-        #brand-tag {
-          margin-top:80px;      
-        }
-      }       
-
-      .brand-subtitle-bg {
-        width:130px;
-        margin-top:-5px;
-        position:relative;
-        z-index:1;
-        grid-area:a;
-      }
-
-     @media only screen and (min-width: 1024px) {
-        .brand-subtitle-bg {
-          grid-area:e;          
-        }
-      }          
-
-      #dash-01 {
-        left: calc(50% - 65px);
-        margin-top:20px;
-      }
-
-     @media only screen and (min-width: 1024px) {
-        #dash-01 {
-          margin-top:75px;        
-        }
-      }               
-
-
-      #brand-title {
-        @apply --heading-font;
-        font-size:50px;
-        line-height:50px;
-        margin:-10px auto 0;
-        grid-area: b;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #brand-title {
-          margin-top:0  px;
-          font-size:80px;
-          line-height:80px;
-          grid-area:f;          
-        }
-      }          
-
-      #introduction {
-        @apply --body-font-desktop;
-        font-size:18px;
-        line-height:25px;
-        margin:32px auto 0;
-        width:810px;
-        max-width:100%;
-        text-align:left;
-        grid-area:c;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #introduction {
-          font-size:23px;
-          line-height:36px;
-          text-align:center;
-          grid-area:g;
-        }
-      }           
-
-      #brand-content {
-        text-align:center;
-        box-sizing:border-box;
-        padding:0px 16px;        
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #brand-content {
-        }
-}
-
-      #brand-label-wrapper {
-        margin: auto;
-        width:850px;
-        max-width:100%;
-        grid-gap:16px;
-        display:grid;
-        grid-template-columns: 1fr;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #brand-label-wrapper {
+        #why ul {
           grid-template-columns: 1fr 1fr;
         }
-}      
+      }
 
-      .brand-label {
+      #why li {
         background-color: var(--gofrank-lightblue-10);
-        padding: 0px 16px;
-        text-align:center;
-        margin-top:48px;
-      }
-      @media only screen and (min-width: 1024px) {
-        #brand-label {
-          margin-top:64px;
-        }
-}            
-
-      .brand-label img {
-        width:75px;
-        margin-top:-30px;
-      }
-
-      .brand-label p {
+        padding: 18px;
+        box-sizing: border-box;
         text-align: left;
-        @apply --body-font-mobile;
-        font-size:18px;
-        line-height:27px;
-      }
-      @media only screen and (min-width: 1024px) {
-        .brand-label p {
-          font-size:18px;
-          line-height:27px;
-        }        
-      }      
-
-      .brand-label h3 {
-        @apply --body-font-desktop;
-        font-weight:bold;
-        font-size:18px;
-        margin:10px auto 0px;
       }
 
-      #brand-sample-gallery {
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        height:400px;
-        grid-gap:16px;
-        margin-top:32px;
+      #why li img {
+        width: 72px;
+        display: block;
+        margin: auto;
+      }
+
+      #why li h3 {
+        width: 100%;
+        text-align: center;
+      }
+
+      #gallery {
+        width: 100%;
+        padding: 0;
+      }
+
+      #gallery div {
+        display: flex;
+        height: 50vh;
+        width: 100%;
         overflow: auto;
-        -webkit-overflow-scrolling: touch;
       }
 
-      #brand-sample {
-        text-align:center;
+      @media only screen and (min-width: 1024px) {
+        #gallery div {
+          height: 70vh;
+        }
       }
 
-      #brand-sample-gallery img {
-        height:100%;
+      #gallery img {
+        height: 100%;
+        margin-right: 18px;
       }
-
-      #brand-map {
-        text-align:center;
-      }
-
     </style>
 
     <header>
-      <img id="header-image" src="../images/header.jpg">
-
-      <div id="button-wrapper">
-        <div id="button-shop-online">
-          Shop online
-        </div>
-        <div id="button-shop-map">
-          Shops on map
-        </div>
+      <img id="header-image" src="[[imageUrl]]" alt="hero image">
+      <div id="buttons">
+        <button id="shopOnline">Shop online</button>
+        <button id="shopMap">Shops on map</button>
       </div>
     </header>
 
-    <section id="brand-intro">
+    <section id="what">
 
-        <article id="metadata-element-1">
-          <div class="metadata-heading">Country of origin</div>
-          <div class="metadata-content">Sweden</div>
-        </article>
+      <ul id="characteristics">
+        <li>
+          <h6>Country of origin</h6>
+          <h3>[[country]]</h3>
+        </li>
+        <li>
+          <h6>Founder</h6>
+          <h3>[[founder]]</h3>
+        </li>
+        <li>
+          <h6>Collection</h6>
+          <h3>[[collections]]</h3>
+        </li>
+        <li>
+          <h6>Website</h6>
+          <h3>[[websiteUrl]]</h3>
+        </li>
+      </ul>
 
-        <article id="metadata-element-2">
-          <div class="metadata-heading">Founder</div>
-          <div class="metadata-content">Maria Erixon Levin</div>
-        </article>
+      <article id="intro">
 
-        <article id="metadata-element-3">
-          <div class="metadata-heading">Collection</div>
-          <div class="metadata-content">Menswear, Womenswear</div>
-        </article>
+        <h2 id="tagline">[[tagline]]</h2>
+        <h1>[[name]]</h1>
 
-        <article id="metadata-element-4">
-          <div class="metadata-heading">Website</div>
-          <div class="metadata-content">www.nudiejeans.com/</div>
-        </article>                        
-
-      <h2 class="brand-subtitle" id="brand-tag">Unisex Rock 'n Roll</h2>
-      <img class="brand-subtitle-bg" id="dash-01" src="../images/dash-01.svg">
-      <h1 id="brand-title">Nudie Jeans</h1>
-
-      <article id="introduction">
         Meet Nudie jeans, a role-model brand that does not only focus on fair and transparent production, but on sustainable ownership as well. They offer free repairs, and actively foster a long-lasting relationship between the pair and its owner. By telling the owners to wash only twice a year, and to cherish scratches or stains as marks of life. By trying to get them to look at their jeans like a fine bottle of wine – both being things that get better with age. If all goes as planned, owner and jeans become one. Like a second skin. Well well, denim and romance. Who would’ve thought?
+
       </article>
 
-  </section>
+    </section>
 
-  <section id="brand-content">
+    <section id="why">
+      <h2>So why this brand?</h2>
+      <ul>
+        
+        <li>
+          <article>
+            <img src="../images/icon-green-production.svg">
+            <h3>Green production</h3>
+            <p>
+              Nudie Jeans has free repair shops, where you can either get your old pair repaired for free, or hand them in and receive 20% off your next purchase. The jeans will either be resold as second-hand, or recycled. If you don’t live close to a shop, you can order a free repair kit. 
+            </p>
+          </article>
+        </li>
 
-      <h2 class="brand-subtitle">
-        So why this brand?
-      </h2>
-      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
+        <li>
+          <article>
+            <img src="../images/icon-vegan.svg">
+            <h3>Fair labour</h3>
+            <p>
+              Around 70% of Nudie Jean’s garments are made in Europe. In production countries such as India (5%) where there’s a difference between minimum and livable wage, Nudie compensates. They have been a member of the Fair Wear Foundation since 2009 and have ranked as a leader position for years now, ensuring fair working conditions throughout their production chain. Lastly, they are fully transparent about where their clothes are made. You may find more detailed information in the social report on their website.
+            </p>
+          </article>
+        </li>
 
-      <section id="brand-label-wrapper">
+      </ul>
+    </section>
 
-        <article class="brand-label">
-          <img src="../images/icon-green-production.svg">
-          <h3>Green production</h3>
-          <p class="content-label-text">
-            Nudie Jeans has free repair shops, where you can either get your old pair repaired for free, or hand them in and receive 20% off your next purchase. The jeans will either be resold as second-hand, or recycled. If you don’t live close to a shop, you can order a free repair kit. 
-          </p>
-        </article>
+    <section id="gallery">
+      <h2>Collection sample</h2>
+      <div>
+        <img src="../images/collection-1.jpg" alt="collection item">
+        <img src="../images/collection-2.jpg" alt="collection item">
+        <img src="../images/collection-3.jpg" alt="collection item">
+        <img src="../images/collection-4.jpg" alt="collection item">
+        <img src="../images/collection-5.jpg" alt="collection item">
+      </div>
 
-        <article class="brand-label">
-          <img src="../images/icon-vegan.svg">
-          <h3>Fair labour</h3>
-          <p class="content-label-text">
-            Around 70% of Nudie Jean’s garments are made in Europe. In production countries such as India (5%) where there’s a difference between minimum and livable wage, Nudie compensates. They have been a member of the Fair Wear Foundation since 2009 and have ranked as a leader position for years now, ensuring fair working conditions throughout their production chain. Lastly, they are fully transparent about where their clothes are made. You may find more detailed information in the social report on their website.
-          </p>
-        </article>
-
-      </section>
-
-  </section>
-
-  <section id="brand-sample">
-
-      <h2 class="brand-subtitle">
-        Collection sample
-      </h2>
-      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
-
-      <article id="brand-sample-gallery">
-        <img class="content-label-image" src="../images/collection-1.jpg">
-        <img class="content-label-image" src="../images/collection-2.jpg">
-        <img class="content-label-image" src="../images/collection-3.jpg">
-        <img class="content-label-image" src="../images/collection-4.jpg">
-        <img class="content-label-image" src="../images/collection-5.jpg">
-      </article>
-
-  </section>  
+    </section> 
 
     <section id="brand-map">
-
-      <h2 class="brand-subtitle">
-        Where to buy this brand
-      </h2>
-      <img class="brand-subtitle-bg" src="../images/dash-02.svg">
-
-      <article id="map">
-      </article>
-
+      <h2>Where to buy this brand</h2>
   </section>  
 
   </template>
@@ -462,13 +285,44 @@
       static get is() { return 'gofrank-brand-page'; }
       static get properties() {
         return {
-          icon: {
+          
+          name: {
+            type: String,
+            value: ''
+          },
+
+          tagline: {
+            type: String,
+            value: ''
+          },
+
+          imageUrl: {
+            type: String,
+            value: ''
+          },
+          
+          country: {
+            type: String,
+            value: ''
+          },
+
+          founder: {
+            type: String,
+            value: ''
+          },
+
+          collections: {
+            type: Array,
+            value: []
+          },
+
+          websiteUrl: {
             type: String,
             value: ''
           }
-        };
-      }
 
+        }
+      }
     }
 
     window.customElements.define(GofrankBrandPage.is, GofrankBrandPage);

@@ -1,0 +1,44 @@
+<link rel="import" href="../shadycss/apply-shim.html">
+<link rel="import" href="../polymer/lib/elements/custom-style.html">
+
+<custom-style>
+  <style>
+    html {
+      --gofrank-action-button-base: {
+        @apply --gofrank-font-body;
+        outline: none;
+        border: 0;
+        background-color: var(--gofrank-lightblue);
+        border-radius: 100px;
+        color: var(--gofrank-blue);
+        text-align: center;
+        padding: 0px 20px;
+        font-weight:bold; 
+        box-sizing:border-box;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        box-shadow:1px 1px 3px 0px rgba(0,0,0,0.25);
+      }
+
+      --gofrank-action-button: {
+        @apply --gofrank-action-button-base;
+        width:125px;
+        height:40px;
+        font-size:12px;
+      }
+
+    }
+
+    @media only screen and (min-width: 1024px) {
+      html {
+        --gofrank-action-button: {
+          @apply --gofrank-action-button-base;
+          height: 50px;
+          width:175px;
+          font-size:18px;
+        }
+      }
+  </style>
+</custom-style>
