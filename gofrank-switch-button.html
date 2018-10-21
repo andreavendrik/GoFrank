@@ -1,0 +1,108 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="gofrank-switch-button">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      div {
+        /*width: 70%;*/
+        height: 40px;
+        display:flex;
+        margin: 24px auto;
+        @apply --filter-button;
+        @apply --ui-font-desktop;
+        font-weight:bold;
+        border-radius: 100px;
+        overflow: hidden;
+        background-color: var(--gofrank-lightgray);
+      }
+
+      @media only screen and (min-width: 1024px) {
+        div {
+          @apply --ui-font-desktop;
+          width: 35%;
+        }
+      }
+
+      button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        @apply --gofrank-font-small;
+        font-weight: bold;
+        background-color: transparent;
+        outline: none;
+      }
+
+      button[data-selected] {
+        background-color: var(--gofrank-lightblue);
+      }
+    </style>
+
+    <div>
+      <dom-repeat items="[[options]]" as="value">
+        <template>
+          <button
+            data-value$="[[value]]"
+            data-selected$="[[_isSelected(value, selected)]]"
+            on-click="_handleClick"
+          >[[value]]</button>
+        </template>
+      </dom-repeat>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * `gofrank-switch-button`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/gofrank-switch-button.html
+     */
+    class GofrankSwitchButton extends Polymer.Element {
+      static get is() { return 'gofrank-switch-button'; }
+      static get properties() {
+        return {
+          
+          options: {
+            type: Array,
+            value: []
+          },
+          
+          selected: {
+            type: String,
+            value: '',
+            notify: true,
+            observer: '_selectedChanged'
+          }
+
+        };
+      }
+
+      _handleClick(evt) {
+        this.selected = evt.target.dataset.value;
+      }
+
+      _isSelected(a, b) {
+        return a == b;
+      }
+
+    }
+
+    window.customElements.define(GofrankSwitchButton.is, GofrankSwitchButton);
+  </script>
+</dom-module>
