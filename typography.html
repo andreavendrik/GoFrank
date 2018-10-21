@@ -1,0 +1,109 @@
+<link rel="import" href="../shadycss/apply-shim.html">
+<link rel="import" href="../polymer/lib/elements/custom-style.html">
+
+<custom-style>
+  <style>
+
+    html {
+
+      /*
+      Settings
+      */
+
+      --font-base: {
+        text-rendering: optimizeLegibility;
+        font-kerning: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* headline */
+
+      --gofrank-headline-font-base: {
+        @apply --font-base;
+        font-family: 'Lydian', -apple-system, 'Helvetica Neue', Helvetica;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      --gofrank-font-h1-base: {
+        @apply --gofrank-headline-font-base;
+        letter-spacing: 0px;
+        line-height: 1.15;
+      }
+
+      /* Body */
+
+      --gofrank-body-font-base: {
+        @apply --font-base;
+        font-family: 'HK Grotesk', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.5;
+      }
+
+      /* UI */
+
+      --gofrank-ui-font-base: {
+        @apply --font-base;
+        font-family: 'HK Grotesk', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+      }
+
+    }
+
+    /*
+      Mobile
+    */
+
+      html {
+        
+        --gofrank-font-h1: {
+          @apply --gofrank-font-h1-base;
+          font-size: 35px;
+          font-weight:normal;
+        }
+
+        --gofrank-font-h3: {
+          @apply --gofrank-font-h1-base;
+          font-size: 21px;
+          font-weight:normal;
+        }
+
+        --gofrank-font-body: {
+          @apply --gofrank-body-font-base;
+          font-size: 18px;
+        }
+
+        --gofrank-font-small: {
+          @apply --gofrank-body-font-base;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+      }
+
+    /*
+      Desktop
+    */
+
+    @media only screen and (min-width: 1024px) {
+      html {
+        
+        --gofrank-font-h1: {
+          @apply --gofrank-font-h1-base;
+          font-size: 66px;
+          font-weight: bold;
+        }
+
+        --gofrank-font-body: {
+          @apply --gofrank-body-font-base;
+          font-size: 21px;
+        }
+
+      }
+    }
+
+  </style>
+
+</custom-style>
