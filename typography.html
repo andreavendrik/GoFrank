@@ -22,7 +22,6 @@
       --gofrank-headline-font-base: {
         @apply --font-base;
         font-family: 'Lydian', -apple-system, 'Helvetica Neue', Helvetica;
-        font-style: italic;
         margin-top: 0;
         margin-bottom: 0;
       }
@@ -31,6 +30,15 @@
         @apply --gofrank-headline-font-base;
         letter-spacing: 0px;
         line-height: 1.15;
+        font-weight:normal;
+        font-style: italic;
+      }
+
+      --gofrank-font-h3-base: {
+        @apply --gofrank-headline-font-base;
+        letter-spacing: 0px;
+        line-height: 1.15;
+        font-weight: normal;
       }
 
       /* Body */
@@ -40,7 +48,7 @@
         font-family: 'HK Grotesk', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
         font-style: normal;
         font-weight: normal;
-        line-height: 1.5;
+        line-height: 1.6;
       }
 
       /* UI */
@@ -61,11 +69,16 @@
         --gofrank-font-h1: {
           @apply --gofrank-font-h1-base;
           font-size: 35px;
-          font-weight:normal;
+        }
+
+        --gofrank-font-h2: {
+          @apply --gofrank-body-font-base;
+          font-size: 18px;
+          font-weight: bold;
         }
 
         --gofrank-font-h3: {
-          @apply --gofrank-font-h1-base;
+          @apply --gofrank-font-h3-base;
           font-size: 21px;
           font-weight:normal;
         }
@@ -99,7 +112,6 @@
         --gofrank-font-h1: {
           @apply --gofrank-font-h1-base;
           font-size: 66px;
-          font-weight: bold;
         }
 
         --gofrank-font-body: {

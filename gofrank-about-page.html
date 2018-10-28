@@ -44,7 +44,7 @@
 
       #background-illustration {
         position:absolute;
-        top:0;
+        top:-40px;
         left: 0;
         width:100%;
         height:100%;
@@ -60,14 +60,16 @@
 
       h1 {
         position: absolute;
+        width: 100%;
+        text-align: center;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 0;
+        transform: translate(0%, -50%);
         @apply --gofrank-font-h1;
       }
 
       h2 {
-        @apply --gofrank-font-body;
+        @apply --gofrank-font-h2;
         font-weight: bold;
         text-align: center;
         position: relative;
@@ -77,6 +79,7 @@
 
       h2:before {
         @apply --gofrank-swirl-background;
+        max-width: 100%;
       }
 
       section {
@@ -95,6 +98,12 @@
         @apply --gofrank-font-body;
       }
 
+      @media only screen and (min-width: 1024px) {
+        #intro {
+          padding-bottom: 32px;
+        }
+      }
+
       #aboutUs {
         background-color: var(--gofrank-lightblue-10);
         padding: 36px 0 18px 0;
@@ -103,24 +112,44 @@
       }
 
       #aboutUs h2 {
-        margin-top: -48px;
+        margin-top: -64px;
+        margin-bottom:32px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+       #aboutUs h2 {
+          margin-top: -128px;
+        }
       }
 
       #aboutUs img {
         display: block;
-        margin: 24px auto;
+        margin: 24px auto 9px auto;
         width: 900px;
         max-width: 100%;
       }
 
       #aboutIntro {
         @apply --gofrank-font-body;
+        margin: 16px auto;
       }
+
+      @media only screen and (min-width: 1024px) {
+        #aboutIntro {
+          margin: 80px auto 64px;
+          text-align:center;
+        }
+      }     
 
       #teamMembers {
         width:836px;
+        max-width: 100%;
         display: grid;
         @apply --gofrank-font-small;
+      }
+
+      #teamMembers p:first-child {
+        margin-bottom: 0;
       }
 
       @media only screen and (min-width: 1024px) {
@@ -132,6 +161,12 @@
 
       #faq {
         @apply --gofrank-font-small;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        #faq {
+          padding-top: 32px;
+        }
       }
 
       #faq h2 {
@@ -151,14 +186,15 @@
         content: '';
         background-image: url('images/arrow.svg');
         background-position: center;
-        width: 35px;
-        height: 21px;
+        width: 25px;
+        height: 15px;
         position: absolute;
+        margin-top: 5px;
       }
 
       #faq h3 {
         @apply --gofrank-font-h3;
-        padding-left: 54px;
+        padding-left: 36px;
         margin-bottom: 12px;
       }
     </style>
