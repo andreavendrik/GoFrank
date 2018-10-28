@@ -1,34 +1,35 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="gofrank-logo.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="gofrank-mobile-menu">
   <template>
     <style>
     :host {
       position: relative;
-      top:10px;
-      left:10px;
-      width:calc(100% - 20px);
-      height:calc(100% - 20px);
-      background-color: var(--gofrank-lightblue-50);
-      z-index:2;
       display: block;
+      background-color: var(--gofrank-lightblue-50);
     }
 
     #logo {
-      width:100%;
+      width: 108px;
       text-align: center;
+      margin: 0 auto;
+      padding-top: 12px;
+      --gofrank-logo-fill: white;
     }
 
-    #logo img {
-      margin-top:16px;
-      height: 40px;
-    }
-
-    #cross {
-      width:20px;
+    #close-button {
       position:absolute;
-      top:20px;
-      right:20px;
+      width: 20px;
+      height: 20px;
+      top: 20px;
+      right: 20px;
+      border: 0;
+      background-image: url('../../images/cross.svg');
+      background-size: 100%;
+      background-color: transparent;
+      cursor: pointer;
     }
 
     nav {
@@ -42,11 +43,28 @@
     }
 
     nav a {
+      display: block;
+      position: relative;
       color: black;
-      @apply --heading-font-small;
-      font-size:28px;     
-      margin-bottom:20px; 
+      @apply --gofrank-font-h2-serif;
+      margin-bottom: 32px; 
       text-decoration: none;
+      z-index: 1;
+    }
+
+    nav a:not(:last-child):after {
+      position: absolute;
+      content: '';
+      background-image: url('../../images/dash-02-wit.svg');
+      background-position: center;
+      background-size: 100%;
+      width: 50px;
+      height: 12px;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-repeat: no-repeat;
+      z-index: -1;
     }
 
     nav img {
@@ -57,21 +75,13 @@
     
     </style>
 
-      <div id="logo">
-        <img src="../images/logo-wit.svg" alt="logo">
-      </div>
-
-      <div id="cross">
-        <img src="../images/cross.svg" alt="cross">
-      </div>
+      <gofrank-logo id="logo"></gofrank-logo>
+      <button id="close-button"></button>
 
       <nav>
         <a href="/brands/">All brands</a> 
-        <img src="../images/dash-02-wit.svg" alt="logo">
         <a href="/shops/">Where to buy</a> 
-        <img src="../images/dash-02-wit.svg" alt="logo">        
         <a href="/about/">About</a> 
-        <img src="../images/dash-02-wit.svg" alt="logo">        
         <a href="/blog/">Blog</a> 
       </nav>
 
