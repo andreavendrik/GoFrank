@@ -9,30 +9,36 @@
       }
 
       footer {
-        display:grid;
-        grid-gap:16px 48px;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        background-color: var(--gofrank-lightblue-10);
-        color: black;
-        width: 100%;
         height: 100%;
-        padding: 24px 16px 48px;
         box-sizing:border-box;
-        @apply --gofrank-font-small;
+        padding: 48px 16px;
+        background-color: var(--gofrank-lightblue-10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      @media only screen and (min-width: 1024px) {
-        footer {
-          grid-template-columns: 26% 26% 26%;
-          padding: 50px 50px 75px;
+      #wrapper {
+        width: 836px;
+        max-width: 100%;
+        color: black;
+        @apply --gofrank-font-small;
+        display:grid;
+        grid-gap: 48px;
+        grid-template-columns: 1fr;
+        justify-content: center;        
+      }
+
+      @media only screen and (min-width: 500px) {
+        #wrapper {
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
 
-      footer h4 {
+
+      footer h2 {
         margin:10px auto 0px;
-        @apply --gofrank-font-small;
-        font-weight: bold;
+        @apply --gofrank-font-h3;
       }
 
       footer p {
@@ -44,34 +50,39 @@
       }
 
       .footer-section {
-        margin-right: 50px;
+        margin: 0 auto;
         display: block;
-        flex: 1;   
+        flex: 1;
       }
     </style>
 
     <footer>
 
-      <div class="footer-section">
-        <h4>What?</h4>    
-        <p>
-          <span>Go Frank</span> is a platform devoted to helping people who want to start making sustainable and fair fashion choices.
-          Read more about it <a href="/about" rel="about">here.</a>
-      </div>
+      <div id="wrapper">
 
-      <div class="footer-section">
-        <h4>Who?</h4>
-        <p>
-          Go Frank is an initiative by Jonne Bosselaar and Andrea Vendrik.
-          Any questions, remarks, shout outs? <a href="mailto:hello@gofrank.me">Email us</a>.
-        </p>
-      </div>
+        <div class="footer-section">
+          <h2>What?</h2>    
+          <p>
+            <span>Go Frank</span> is a platform devoted to helping people who want to start making sustainable and fair fashion choices.
+            Read more about it <a href="/about" rel="about">here.</a>
+          </p>
+        </div>
 
-      <div class="footer-section">
-        <h4>Get Frank</h4>
-        <p>
-          Follow us on <a href="https://www.instagram.com/gofrankfashion" target="_blank">Instagram</a>, <a href="https://www.facebook.com/gofrankme" target="_blank">Facebook</a> or <a href="https://www.twitter.com/gofrankme" target="_blank">Twitter</a> for the latest news!
-        </p>  
+        <div class="footer-section">
+          <h2>Who?</h2>
+          <p>
+            Go Frank is an initiative by Jonne Bosselaar and Andrea Vendrik.
+            Any questions, remarks, shout outs? <a href="mailto:hello@gofrank.me">Email us</a>.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h2>Get Frank</h2>
+          <p>
+            Follow us on <a href="https://www.instagram.com/gofrankfashion" target="_blank">Instagram</a>, <a href="https://www.facebook.com/gofrankme" target="_blank">Facebook</a> or <a href="https://www.twitter.com/gofrankme" target="_blank">Twitter</a> for the latest news!
+          </p>  
+        </div>
+
       </div>
 
     </footer>

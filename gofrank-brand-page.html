@@ -59,7 +59,7 @@
 
       #what {
         display: grid;
-        grid-gap: 54px;
+        grid-gap: 36px;
         grid-template-rows: auto auto;
         grid-template-areas: 'intro' 'characteristics';
         max-width: 100%;
@@ -68,6 +68,7 @@
       @media only screen and (min-width: 1024px) {
         #what {
           grid-template-areas: 'characteristics' 'intro';
+          grid-gap: 54px;
         }
       }
 
@@ -78,13 +79,13 @@
         padding: 0;
         display: grid;
         grid-gap: 18px;
-        grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+        grid-template-columns: 1fr 1fr;
         text-align: center;
       }
 
       @media only screen and (min-width: 1024px) {  
         #characteristics {
-        grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(4, 1fr);
         }
       }
 
@@ -107,11 +108,21 @@
         width: 100%;
         max-width: 600px;
         margin: 18px auto;
-        text-align: center;
+      }
+
+      #intro p {
+        text-align: left;
+        margin: 0;        
+      }
+
+      @media only screen and (min-width: 1024px) {
+        #intro p {
+          text-align: center;
+        }
       }
 
       h1 {
-        @apply --gofrank-font-h1;
+        @apply --gofrank-font-title;
         margin-bottom: 36px;
       }
 
@@ -129,6 +140,7 @@
         width:836px;
         max-width: 100%;
         @apply --gofrank-font-small;
+        margin-top: 18px;
       }
 
       #why ul {
@@ -150,12 +162,13 @@
         padding: 18px;
         box-sizing: border-box;
         text-align: left;
+        margin-top: 54px;
       }
 
       #why li img {
         width: 72px;
         display: block;
-        margin: auto;
+        margin: -50px auto 0 auto;
       }
 
       #why li h3 {
@@ -166,6 +179,13 @@
       #gallery {
         width: 100%;
         padding: 0;
+        padding-top: 24px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        #gallery {
+          padding-top: 44px;
+        }
       }
 
       #gallery div {
@@ -173,11 +193,13 @@
         height: 50vh;
         width: 100%;
         overflow: auto;
+        margin: 36px 0;
       }
 
       @media only screen and (min-width: 1024px) {
         #gallery div {
           height: 70vh;
+          margin: 54px 0;
         }
       }
 
@@ -221,7 +243,7 @@
         <h2 id="tagline">[[tagline]]</h2>
         <h1>[[name]]</h1>
 
-        Meet Nudie jeans, a role-model brand that does not only focus on fair and transparent production, but on sustainable ownership as well. They offer free repairs, and actively foster a long-lasting relationship between the pair and its owner. By telling the owners to wash only twice a year, and to cherish scratches or stains as marks of life. By trying to get them to look at their jeans like a fine bottle of wine – both being things that get better with age. If all goes as planned, owner and jeans become one. Like a second skin. Well well, denim and romance. Who would’ve thought?
+        <p>Meet Nudie jeans, a role-model brand that does not only focus on fair and transparent production, but on sustainable ownership as well. They offer free repairs, and actively foster a long-lasting relationship between the pair and its owner. By telling the owners to wash only twice a year, and to cherish scratches or stains as marks of life. By trying to get them to look at their jeans like a fine bottle of wine – both being things that get better with age. If all goes as planned, owner and jeans become one. Like a second skin. Well well, denim and romance. Who would’ve thought?</p>
 
       </article>
 

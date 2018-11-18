@@ -1,13 +1,14 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 
+
+
 <dom-module id="gofrank-list">
   <template>
     <style>
       :host {
         display: block;
         text-align: center;
-        padding: 18px 12px;
       }
 
       header {
@@ -21,6 +22,7 @@
         font-weight: normal;
         line-height: 1.2;
         font-size: 16px;
+        @apply --gofrank-body-font-base;
       }
 
       @media only screen and (min-width: 768px) {
@@ -38,6 +40,7 @@
         transform: scale(1.5);
         opacity: 0;
         height: 24px;
+        padding-top: 18px;
 /*        background-image:url('../images/gf-swash.png');        
 */      }
 
@@ -48,19 +51,20 @@
 
       #filter {
         display:flex;
-        justify-content:center;
         margin-bottom:30px;
+        width: 100%;
+        overflow:auto;
+      }
+
+      @media only screen and (min-width: 350px) {
+        #filter {
+          justify-content:center;
+        }
       }
 
       #filter > div {
-        @apply --filter-button; 
-        @apply --ui-font-desktop;             
-        display: flex;
-        margin-right:10px;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-        font-weight:bold;                     
+        @apply --gofrank-filter-button;         
+        margin-right:10px;         
       }
 
       @media only screen and (min-width: 768px) {
@@ -73,6 +77,7 @@
         margin: 0;
         padding: 0;
         max-width: 100%;
+        padding: 18px 12px;
       }
 
       @media only screen and (min-width: 768px) {
@@ -179,7 +184,7 @@
           width: 85%;
           margin: auto;
           position: absolute;
-          bottom: -5px;
+          bottom: -10px;
           left: 7.5%;
           background-color: rgba(255,255,255,0.95);
           text-align:center;
@@ -199,6 +204,11 @@
            margin: 0 0 6px 0;
           font-size:33px;
         }
+      }
+
+      #list li .textbox article {
+        @apply --gofrank-body-font-base;
+        letter-spacing: 0.5;
       }
     </style>
 

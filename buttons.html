@@ -20,13 +20,23 @@
         justify-content:center;
         cursor:pointer;
         box-shadow:1px 1px 3px 0px rgba(0,0,0,0.25);
+        white-space:nowrap;
       }
 
       --gofrank-action-button: {
         @apply --gofrank-action-button-base;
         width:125px;
         height:40px;
-        font-size:12px;
+        font-size:14px;
+      }
+
+      --gofrank-filter-button: {
+        @apply --gofrank-action-button-base;
+        background-color: var(--gofrank-lightgray);
+        color:black;
+        box-shadow:none;
+        font-size:14px;
+        height:40px;
       }
 
     }
@@ -40,5 +50,8 @@
           font-size:18px;
         }
       }
+
+
+    }
   </style>
 </custom-style>

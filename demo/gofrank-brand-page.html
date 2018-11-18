@@ -8,21 +8,27 @@
 
     <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+<!--     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../gofrank-brand-page.html">
+ -->    <link rel="import" href="../gofrank-brand-page.html">
 
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
+<!--       <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+ -->  
+      <style>
+        html, body {
+          margin: 0;
+        }
       </style>
     </custom-style>
   </head>
   <body>
-    <div class="vertical-section-container">
+<!--     <div class="vertical-section-container">
       <h3>Basic gofrank-brand-page demo</h3>
       <demo-snippet>
         <template>
-          <gofrank-brand-page
+ -->          <gofrank-brand-page
             name="Nudie Jeans"
             tagline="Unisex Rock 'n Roll"
             image-url="../images/header.jpg"
@@ -31,8 +37,8 @@
             collections='["Menswear", "Womenswear"]'
             website-url="https://nudiejeans.com/"
           ></gofrank-brand-page>
-        </template>
+<!--         </template>
       </demo-snippet>
     </div>
-  </body>
+ -->  </body>
 </html>
