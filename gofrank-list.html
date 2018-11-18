@@ -1,6 +1,8 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../iron-selector/iron-selector.html">
 <link rel="import" href="shared-styles.html">
-
 
 
 <dom-module id="gofrank-list">
@@ -62,13 +64,17 @@
         }
       }
 
-      #filter > div {
-        @apply --gofrank-filter-button;         
+      #filter div {
+        @apply --gofrank-filter-button;
         margin-right:10px;         
       }
 
+      #filter div[data-active] {
+        background-color: var(--gofrank-lightblue);
+      }
+
       @media only screen and (min-width: 768px) {
-        #filter > div {
+        #filter div {
         }
       }
 
@@ -163,6 +169,11 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: 50% 0;
+      }
+
+      #list li img:not([src]) {
+        opacity: 0;
       }
 
       @media only screen and (min-width: 768px) {
@@ -210,7 +221,20 @@
         @apply --gofrank-body-font-base;
         letter-spacing: 0.5;
       }
+
+      [hidden] {
+        display: none!important;
+      }
     </style>
+
+    <iron-ajax
+      auto
+      url="http://gofrank.me/wp-content/themes/api/json.brands.php"
+      content-type="application/json"
+      handle-as="json"
+      debounce-duration="300"
+      last-response="{{brands}}"
+    ></iron-ajax>
 
     <header>
       <img id="icon" src="../assets/[[category]].svg" alt="icon">
@@ -218,69 +242,31 @@
       <h1>These brands sell <strong>[[gender]] [[category]]</strong></h1>
     </header>
 
-    <div id="filter">
-      <div>Green production</div>
-      <div class="active">Fair labour</div>
-      <div>Vegan</div>
-    </div>
+    <iron-selector
+      id="filter"
+      selected="{{frankId}}"
+      attr-for-selected="data-id"
+      selected-attribute="data-active"
+    >
+      <dom-repeat items="[[frankCategories]]" as="category">
+        <template>
+          <div data-id$="[[category.id]]">[[category.name]]</div>
+        </template>
+      </dom-repeat>
+    </iron-selector>
 
     <ul id="list">
-      <li on-click="_handleItemClick">
-        <img src="../images/matt.png" alt="img">
-        <div class="textbox">
-          <h2>Matt & Natt</h2>
-          <article>Vegan Bags</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/afriek.png" alt="img">
-        <div class="textbox">
-          <h2>Afriek</h2>
-          <article>Made in Rwanda</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/goatorganic.png" alt="img">
-        <div class="textbox">
-          <h2>Goat organic</h2>
-          <article>Perfect behh-sics</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/peopletree.png" alt="img">
-        <div class="textbox">
-          <h2>People Tree</h2>
-          <article>Vegan Bags</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/matt.png" alt="img">
-        <div class="textbox">
-          <h2>Matt & Natt</h2>
-          <article>Vegan Bags</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/afriek.png" alt="img">
-        <div class="textbox">
-          <h2>Afriek</h2>
-          <article>Made in Rwanda</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/goatorganic.png" alt="img">
-        <div class="textbox">
-          <h2>Goat organic</h2>
-          <article>Perfect behh-sics</article>
-        </div>
-      </li>
-      <li on-click="_handleItemClick">
-        <img src="../images/peopletree.png" alt="img">
-        <div class="textbox">
-          <h2>People Tree</h2>
-          <article>Vegan Bags</article>
-        </div>
-      </li>
+      <dom-repeat items="[[_filterBrands(brands.*, itemId, frankId)]]" as="brand" on-dom-change="_handleDomChange">
+        <template>
+          <li on-click="_handleItemClick">
+            <img data-src$="[[brand.imageUrl]]" alt="img">
+            <div class="textbox">
+              <h2>[[brand.title]]</h2>
+              <article>[[brand.subtitle]]</article>
+            </div>
+          </li>
+        </template>
+      </dom-repeat>
     </ul>
     
   </template>
@@ -298,29 +284,90 @@
       static get is() { return 'gofrank-list'; }
       static get properties() {
         return {
+          
           gender: {
             type: '',
           },
-          category: {
+          
+          itemId: {
             type: String,
-            value: '',
-            observer: '_categoryChanged'
+            value: null,
+          },
+
+          itemCategories: {
+            type: Array,
+            value: [
+              {
+                "id": 81,
+                "slug": "accessories",
+                "name": "Accessories"
+              },
+              {
+                "id": 79,
+                "slug": "bags",
+                "name": "Bags"
+              },
+              {
+                "id": 78,
+                "slug": "menswear",
+                "name": "Menswear"
+              },
+              {
+                "id": 80,
+                "slug": "shoes",
+                "name": "Shoes"
+              },
+              {
+                "id": 77,
+                "slug": "womenswear",
+                "name": "Womenswear"
+              }
+            ]
+          },
+          
+          frankId: {
+            type: String,
+            value: null,
+          },
+
+          frankCategories: {
+            type: Array,
+            value: [
+              {
+                "id": 16,
+                "slug": "fair-labour",
+                "name": "Fair Labour"
+              },
+              {
+                "id": 15,
+                "slug": "green-production",
+                "name": "Green Production"
+              },
+              {
+                "id": 4,
+                "slug": "produced-in-eu",
+                "name": "Produced in EU"
+              },
+              {
+                "id": 17,
+                "slug": "vegan-production",
+                "name": "Vegan Production"
+              }
+            ]
+          },
+          
+          brands: {
+            type: Array,
+            value: []
           }
+
         };
       }
 
-      _categoryChanged(newCat, oldCat) {
-        window.setTimeout(() => {
-          if(newCat && !oldCat) {
-            var items = Array.from(this.shadowRoot.querySelectorAll('li'));
-            for(var i in items) {
-              this._enableTile(items[i], (i+1)*15)
-            }
-          }
-        }, 1000)
-      }
-
       _enableTile(item, timeOutMs) {
+        var img = document.createElement('img');
+        img.onload = (() => item.querySelector('img').src = img.src);
+        img.src = item.querySelector('img').dataset.src;
         window.setTimeout(() => {
           item.classList.add('active');
         }, timeOutMs);
@@ -328,6 +375,35 @@
 
       _handleItemClick() {
         this.dispatchEvent(new CustomEvent('item-clicked'));
+      }
+
+      _handleDomChange(evt) {
+        var items = Array.from(this.shadowRoot.querySelectorAll('li'));
+        for(var i in items) {
+          this._enableTile(items[i], (i+1)*8)
+        }
+      }
+
+      _matchesCategory(brandCatIds, itemId, frankId) {
+        if(!frankId && !itemId) return true;
+        var itemMatchesItem = (brandCatIds || []).indexOf(parseInt(itemId)) !== -1;
+        var itemMatchesFrank = (brandCatIds || []).indexOf(parseInt(frankId)) !== -1;
+        if(!frankId) return itemMatchesItem;
+        if(!itemId) return itemMatchesFrank;
+        return (itemMatchesItem && itemMatchesFrank);
+      }
+
+      _filterBrands(brands, itemId, frankId) {
+        var filteredBrands = [];
+        for(var i in this.brands) {
+          let brand = this.brands[i];
+          var itemMatchesItem = (brand.categoriesIds || []).indexOf(parseInt(itemId)) !== -1;
+          var itemMatchesFrank = (brand.categoriesIds || []).indexOf(parseInt(frankId)) !== -1;
+          if(!frankId && !itemId) filteredBrands.push(brand);
+          else if (!frankId && itemMatchesItem) filteredBrands.push(brand);
+          else if (!itemId && itemMatchesFrank) filteredBrands.push(brand);
+        }
+        return filteredBrands;
       }
 
     }
