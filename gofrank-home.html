@@ -13,6 +13,22 @@
         display: block;
       }
 
+      #section-wrapper {
+        width:100%;
+        padding: 0px;
+        background-color: rgba(255,255,255,1);
+        position: relative;
+        border-radius:10px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        #section-wrapper {
+          margin: 16px auto;
+          width: 720px;
+          padding: 24px;
+        }
+      }
+
       section {
         padding: 0 18px;
         box-sizing: border-box;
@@ -22,44 +38,69 @@
         text-align: center;
       }
 
-      #intro {
-
+      #background-img {
+        position: fixed;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        object-position: center;
+        z-index: 0;
+        display: none;
       }
 
+      @media only screen and (min-width: 768px) {
+        #background-img {        
+          display: block;
+        }
+      }
 
       #intro {
         @apply --body-font-mobile;
         margin: 16px auto;
+        background-color: white;
       }
 
       #intro article br {
         display: none;
       }
 
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (min-width: 768px) {
         #intro article br {
           display:block;
         }
       }
 
       #intro article {
-        @apply --gofrank-font-body;
+        @apply --gofrank-font-small;
+        margin:32px auto;
+      }
+
+      @media only screen and (min-width: 768px) {
+        #intro article {
+          @apply --gofrank-font-body;
+          margin:32px auto 48px;
+        }
       }
 
       gofrank-logo {
-        width: 240px;
+        width: 200px;
         margin: auto;
+        display:none;
+      }
+      @media only screen and (min-width: 768px) {
+        gofrank-logo {
+          display:block;
+        }
       }
 
       #categories {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        margin: auto;
+        margin: 32px auto 32px;
         --border: 1px solid var(--gofrank-lightgray);
-        margin: auto;
       }
 
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (min-width: 768px) {
         #categories {
           grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
@@ -73,26 +114,38 @@
         transform-origin: 50% 50%;
         width: 80px;
         height: 100px;
+        margin:auto;
       }
+      @media only screen and (min-width: 768px) {
+        .child {
+          height:120px;
+        }
+      }      
     </style>
 
-    <section id="intro">
-      <gofrank-logo></gofrank-logo>
-      <article>We are your guide towards a clean wardrobe. <br>What can we help you look for?</article>
-      <gofrank-switch-button options='["Men", "All", "Women"]' selected="All"></gofrank-switch-button>
-    </section>
+    <img id="background-img" src="../images/gf-background-home-2.jpg">
 
-    <section id="categories">
-      <dom-repeat items="[[categories]]" as="category">
-        <template>
-          <gofrank-tile
-            icon="[[category]]"
-            class="child"
-            on-click="_handleTileTap"
-          ></gofrank-tile>
-        </template>
-      </dom-repeat>
-    </section>
+    <div id="section-wrapper">
+
+      <section id="intro">
+        <gofrank-logo></gofrank-logo>
+        <article>We are your guide towards a clean wardrobe. <br>What can we help you look for?</article>
+        <gofrank-switch-button options='["Men", "All", "Women"]' selected="All"></gofrank-switch-button>
+      </section>
+
+      <section id="categories">
+        <dom-repeat items="[[categories]]" as="category">
+          <template>
+            <gofrank-tile
+              icon="[[category]]"
+              class="child"
+              on-click="_handleTileTap"
+            ></gofrank-tile>
+          </template>
+        </dom-repeat>
+      </section>
+
+    </div>
 
   </template>
 

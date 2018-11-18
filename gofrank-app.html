@@ -7,6 +7,8 @@
 <link rel="import" href="gofrank-map-page.html">
 <link rel="import" href="gofrank-footer.html">
 <link rel="import" href="gofrank-mobile-menu.html">
+<link rel="import" href="gofrank-top-menu.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="gofrank-app">
   <template>
@@ -20,68 +22,6 @@
         margin:0px;
         padding: 0px;
         max-height:100vh;
-/*        overflow:hidden;
-*/      }
-
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-        padding: 10px 20px;
-        height: 60px;
-        position: relative;
-        z-index:2;
-        max-width: 1200px;
-        margin: auto;
-      }
-
-      #logo {
-        height:38px;
-        flex: 1;
-        transition: 0.5s opacity;
-        text-align: center;
-      }
-
-      #logo img {
-        height: 100%;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #logo {
-          text-align: left;
-        }
-      }  
-
-      #menu img {
-        flex: none;
-        height: 20px;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #menu {
-          display:none;
-        }
-      }     
-
-      nav {
-        flex: 1;
-        text-align: right;
-        display: none;
-      }
-
-      @media only screen and (min-width: 1024px) {
-        nav {
-          display:block;
-        }
-      }           
-
-      nav a {
-        @apply --ui-font-desktop;
-        color: black;
-        margin-right: 20px;
-        text-decoration: none;
-        font-weight:normal;
       }
 
       :host(:not([page="home"])) #logo {
@@ -138,21 +78,7 @@
       }
     </style>
 
-    <header>
-      <div id="logo">
-        <img src="../images/logo.svg" alt="logo">
-      </div>
-      <div id="menu">
-        <img src="../images/menu.svg" alt="menu">
-      </div>
-      <nav>
-        <a href="/brands/">All brands</a> 
-        <a href="/shops/">Where to buy</a> 
-        <a href="/about/">About</a> 
-        <a href="/blog/">Blog</a> 
-      </nav>
-    </header>
-
+    <gofrank-top-menu id="top-menu"></gofrank-top-menu>
 
     <gofrank-home class="page" on-tile-tap="_showList"></gofrank-home>
     
