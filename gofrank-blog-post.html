@@ -1,0 +1,180 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="gofrank-tile.html">
+<link rel="import" href="gofrank-logo.html">
+<link rel="import" href="gofrank-switch-button.html">
+
+<dom-module id="gofrank-blog-post">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;        
+      }
+
+      body {
+        margin:0;
+      }
+
+      #post-wrapper {
+        width: 100%;
+        max-width:800px;
+        height: 100%;
+        margin:16px auto;
+        text-align:left;        
+      }   
+
+      @media only screen and (min-width:768px) {
+        #post-wrapper {
+          width:100%;
+        }      
+      }
+
+      #header-img {
+        width:100%;
+        height:70vh;
+        background-image: url('../images/header.jpg');
+        background-color: grey;  
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;        
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-img {
+          height:350px;
+        }
+      }
+
+      #post-information {
+        box-sizing:border-box;
+        margin: 0px auto 0;
+        background-color:rgba(255,255,255);
+        width:100%;
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-information {
+          margin:-112px auto 0;
+          padding:32px;
+          width:90%;
+        }
+      }      
+
+      #post-title h1 {
+        @apply --gofrank-font-h2;
+        font-size:35px;
+        line-height:1.2em;
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-title h1 {
+          font-size:40px;
+          text-align:center;
+        }
+      }                  
+
+      #post-author {
+        @apply --gofrank-font-tiny;
+        text-transform:uppercase;
+        font-weight:bold;
+        margin:8px auto 8px;
+        letter-spacing:0.5px;
+      }
+
+       @media only screen and (min-width:768px) {
+          #post-author {
+            text-align:center;
+          }
+        }        
+
+      #post-intro {
+        @apply --gofrank-font-body;
+        font-weight:bold;
+        margin:24px auto;
+      }
+
+      #post-article {
+        @apply --gofrank-font-body;        
+      }
+
+      #post-article h2 {
+        @apply --gofrank-font-body;
+        font-weight:bold;
+        margin:0px;
+      }
+
+      #post-article p {
+        margin-top:0px;
+      }
+
+
+    </style>
+
+      <div id="header-img">
+      </div>  
+
+      <div id="post-wrapper">
+
+          <div id="post-information">
+
+            <heading id="post-title"> 
+              <h1>A very long title here</h1>
+            </heading>
+
+            <article id="post-author">
+              2 min. • Jonne Bosselaar • Image by 
+            </article>
+
+            <article id="post-intro">
+              Five years ago, the most tragic incident of the fashion industry took place. On April 24th 2013 the Rana Plaza building in Dhaka collapsed, while thousands of garment workers were still inside. In total 1.134 workers died, another 2.500 people got injured. Although it was not the first fatal incident in the global fashion industry by far, it was a wakeup call. To ensure this would not happen again, governments, employers, companies and NGOs all around the world promised fundamental changes. Now, five years later, it is time to look back. How was this tragedy handled? What has changed?
+            </article>
+
+            <article id="post-article">
+              <h2>Compensation and transparency</h2>
+              <p>
+              After the collapse, it was of paramount importance that the injured and the families of the dead got fair financial compensation. In total 30 million dollars was needed. Only in June 2015 this amount had been raised, more than 2 years later.
+            </p>
+            <p>
+              Raising money turned out to be problematic. Just a handful of brands admitted to sourcing from one of the factories in the Rana Plaza building. Moreover, companies are not obligated to share their production locations. To find evidence, volunteers had to search through all the debris to look for brand tags. This shows why transparency is so important. Only then brands can be held accountable for their sourcing practices. Only then we can be sure they will invest in factories and workers that make their clothes.
+            </p>
+            </p>
+              In the end the total sum of 30 million dollars was raised, but for a large part by anonymous donations.
+            </p>
+
+          </article>
+
+        </div>
+
+
+
+
+  </template>
+
+  <script>
+    /**
+     * `gofrank-blog-post`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/gofrank-blog.html
+     */
+    class GofrankBlogPost extends Polymer.Element {
+      static get is() { return 'gofrank-blog-post'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankBlogPost.is, GofrankBlogPost);
+  </script>
+</dom-module>
