@@ -29,7 +29,8 @@
 
       @media only screen and (min-width: 768px) {
         header h1 {
-          margin: 48px 0 0 0;
+          margin: 48px 0 24px 0;
+          font-size: 21px;          
         }
       }
 
@@ -53,20 +54,31 @@
 
       #filter {
         display:flex;
-        margin-bottom:30px;
+        margin-bottom:16px;
         width: 100%;
         overflow:auto;
+        padding:0px 16px;
+        box-sizing: border-box;
       }
 
       @media only screen and (min-width: 350px) {
         #filter {
           justify-content:center;
+          margin-bottom:32px;
         }
       }
 
       #filter div {
         @apply --gofrank-filter-button;
-        margin-right:10px;         
+        margin-right:10px;   
+  
+      }
+
+      @media only screen and (min-width: 768px) {
+        #filter div {
+          height:50px;
+          font-size:16px;    
+        }
       }
 
       #filter div[data-active] {
@@ -187,7 +199,7 @@
         text-align: left;
         padding: 0px 18px;
         box-sizing: border-box;
-        @apply --ui-font-desktop;
+        @apply --gofrank-font-small;
       }
 
       @media only screen and (min-width: 768px) {
@@ -213,13 +225,13 @@
       @media only screen and (min-width: 768px) {
         #list li .textbox h2 {
            margin: 0 0 6px 0;
-          font-size:33px;
+          font-size:30px;
         }
       }
 
       #list li .textbox article {
         @apply --gofrank-body-font-base;
-        letter-spacing: 0.5;
+        letter-spacing: 0.3px;
       }
 
       [hidden] {
