@@ -23,6 +23,13 @@
         width:100%;
         max-width:960px;
         margin:auto;
+        padding:0;
+        box-sizing:border-box;
+      }
+      @media only screen and (min-width:768px) {
+        #wrapper {
+          padding:32px;
+        }      
       }
 
       #last-post-wrapper {
@@ -44,6 +51,8 @@
       @media only screen and (min-width:768px) {
         #old-posts-wrapper {
           display:grid;
+          max-width:100%;
+          margin:auto;
           grid-gap: 36px;
           grid-template-columns: 1fr;
         }
@@ -52,10 +61,6 @@
       #old-posts-wrapper {
         grid-template-columns:1fr 1fr;
       }
-/*
-      gofrank-blog-post-thumbnail {
-        width:45%;
-      }*/
 
       #last-post-img {
         width:100%;
@@ -142,7 +147,7 @@
           <div id="last-post-information">
 
             <heading id="last-post-title"> 
-              A very long title here
+              A pretty short title here
             </heading>
 
             <article id="last-post-author">
