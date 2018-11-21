@@ -1,0 +1,147 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="gofrank-tile.html">
+<link rel="import" href="gofrank-logo.html">
+<link rel="import" href="gofrank-switch-button.html">
+
+<dom-module id="gofrank-blog-post-thumbnail">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;        
+      }
+
+      body {
+        margin:0;
+      }
+
+      #post-wrapper {
+        width: 90%;
+        height: 100%;
+        cursor: pointer;
+        margin:16px auto;
+        transition:0.3s;
+      }
+
+      #post-wrapper:hover {
+        transform:translateY(-5px);
+      }
+
+      #post-wrapper:hover #post-information {
+          background-color:var(--gofrank-lightblue-10);
+      }      
+
+      @media only screen and (min-width:768px) {
+        #post-wrapper {
+          width:100%;
+        }      
+      }
+
+      #post-img {
+        width:100%;
+        height:300px;
+        background-image: url('../images/header.jpg');
+        background-color: grey;  
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;        
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-img {
+          height:350px;
+        }
+      }
+
+      #post-information {
+        box-sizing:border-box;
+        margin: -72px auto 0;
+        padding:16px;
+        background-color:rgba(255,255,255,0.9);
+        width:90%;
+        text-align:center;        
+        border-bottom: 5px solid var(--gofrank-blue);
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-information {
+          margin:-80px auto 0;
+        }
+      }      
+
+      #post-title {
+        @apply --gofrank-font-h2;
+        font-size:21px;
+      }
+
+      @media only screen and (min-width:768px) {
+        #post-title {
+          font-size:25px;
+        }
+      }                  
+
+      #post-author {
+        @apply --gofrank-font-tiny;
+        text-transform:uppercase;
+        font-weight:bold;
+        margin:8px auto 8px;
+        letter-spacing:0.5px;
+      }
+
+
+    </style>
+
+      <div id="post-wrapper">
+
+        <a href="">
+          <div id="post-img">
+          </div>  
+        </a>
+
+          <div id="post-information">
+
+            <div id="post-title"> 
+              A very long title here
+            </div>
+
+            <div id="post-author">
+              2 min. • Jonne Bosselaar
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+  </template>
+
+  <script>
+    /**
+     * `gofrank-blog-post-thumbnail`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/gofrank-blog.html
+     */
+    class GofrankBlogPostThumbnail extends Polymer.Element {
+      static get is() { return 'gofrank-blog-post-thumbnail'; }
+      static get properties() {
+        return {
+          icon: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(GofrankBlogPostThumbnail.is, GofrankBlogPostThumbnail);
+  </script>
+</dom-module>
