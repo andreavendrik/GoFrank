@@ -1,9 +1,13 @@
 <link rel="import" href="../shadycss/apply-shim.html">
 <link rel="import" href="../polymer/lib/elements/custom-style.html">
+<link rel="import" href="colors.html">
+
 
 <custom-style>
   <style>
     html {
+
+
       --gofrank-swirl-background: {
         position: absolute;
         content: '';
@@ -17,6 +21,10 @@
         transform: translate(-50%, -50%);
         background-repeat: no-repeat;
         z-index: -1;
+      }
+      --gofrank-border: {
+        border: 1px solid var(--gofrank-lightgray);
+      }
       };
     }
   </style>

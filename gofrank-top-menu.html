@@ -7,6 +7,7 @@
     <style>
     :host {
       position: relative;
+      display:block;
     }
 
     #logo {
@@ -16,6 +17,10 @@
       padding-top: 12px;
       --gofrank-logo-fill: white;
       z-index:1;
+    }
+
+    #logo img {
+      display:none;
     }
 
     #menu {
@@ -59,7 +64,7 @@
     }       
 
     nav a {
-      @apply --gofrank-font-small;      
+      @apply --gofrank-font-tiny;      
       display: block;
       position: relative;
       color: black;
